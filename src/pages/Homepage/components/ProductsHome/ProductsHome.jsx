@@ -1,6 +1,7 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ProductCard } from '../../../../components/ProductCard/ProductCard';
-import { HeroButtonStyled } from '../Hero/HeroStyled';
+
 import {
   Button,
   ProductCardsWrapper,
@@ -8,19 +9,17 @@ import {
   Title,
 } from './ProductsHomeStyles';
 
-export const ProductsHome = ({ title }) => {
+export const ProductsHome = ({ title = '', data = [] }) => {
+  const navigate = useNavigate();
   return (
     <ProductHomeStyled>
-      {title && <Title>{title}</Title>}
+      <Title>{title}</Title>
       <ProductCardsWrapper>
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
+        {data.map(product => (
+          <ProductCard key={product.id} product={product} />
+        ))}
       </ProductCardsWrapper>
-      {/* <ProductCard />
-        <ProductCard />
-        <ProductCard /> */}
-      <Button>Ver Todos</Button>
+      <Button onClick={() => navigate('/products')}>Ver Todos</Button>
     </ProductHomeStyled>
   );
 };

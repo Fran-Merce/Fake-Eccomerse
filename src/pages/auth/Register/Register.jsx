@@ -1,4 +1,3 @@
-
 import { useDispatch, useSelector } from 'react-redux';
 import { AuthLayout } from '../Layout/AuthLayout';
 import {
@@ -6,18 +5,16 @@ import {
   FormContentWrapper,
   FormErrorStyled,
   FormStyled,
-
   InputStyled,
   SubmitButton,
 } from '../Ui/FormStyles';
 import { bindActionCreators } from 'redux';
-import { authActions } from '../../../redux/actions/index';
+import { authActions } from '../../../redux/auth/authActions';
 import { useFormik } from 'formik';
 import { validationSchemaRegister } from '../validation/schemas';
 import { AiFillGoogleCircle } from 'react-icons/ai';
 
-
-const initialValues= {
+const initialValues = {
   email: '',
   password: '',
   displayName: '',
@@ -30,7 +27,7 @@ export const Register = () => {
     dispatch
   );
 
-  const handleSubmitForm = (values) => {
+  const handleSubmitForm = values => {
     startSingInWithEmailandPass(values);
   };
 
@@ -43,7 +40,7 @@ export const Register = () => {
 
   return (
     <AuthLayout bg='register'>
-      <FormStyled  onSubmit={handleSubmit}>
+      <FormStyled onSubmit={handleSubmit}>
         <h1>Register</h1>
         <FormContentWrapper>
           <div>

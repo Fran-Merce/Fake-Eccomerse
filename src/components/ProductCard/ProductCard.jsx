@@ -1,4 +1,8 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { formatPrice } from '../../helpers/formatPrice';
+import { addProductAction } from '../../redux/cart/cartActions';
 import {
   Price,
   ProductBtn,
@@ -8,28 +12,29 @@ import {
   ProductContentWrapper,
   ProductQuantity,
 } from './ProductCardStyles';
-import img from '../../assets/imgs/product1.png';
-export const ProductCard = props => {
+// import img from '../../assets/imgs/product1.png';
+export const ProductCard = ({ product } = {}) => {
+  const { id, price, name, image, category, description } = product;
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const hadleNavigate = () => {
+    navigate(`/product/${id}`);
+  };
   return (
     <ProductCardWrapper>
       <ProductCardImgWrapper>
-        <img src={img} alt='' />
+        <img src={image} alt='' />
       </ProductCardImgWrapper>
 
       <ProductContentWrapper>
-        <h3>Fount K24</h3>
-        <p>
-          hoal aslflaslfs aslfaskl;flas fas fl;asfkl;asklf
-          asfsfaf;alkskl;fl;aksfkl;askfsal;flpaskl;f
-        </p>
-        <Price>Precio $300</Price>
+        <h3>{name}</h3>
+        <p>{description}</p>
+        <Price>{formatPrice(price)}</Price>
         <ProductButtonsWrapper>
-          <ProductQuantity>
-            <p>-</p>
-            <p>1</p>
-            <p>+</p>
-          </ProductQuantity>
-          <ProductBtn>AGREGAR</ProductBtn>
+          <ProductQuantity onClick={hadleNavigate}>VER</ProductQuantity>
+          <ProductBtn onClick={() => dispatch(addProductAction(product))}>
+            AGREGAR
+          </ProductBtn>
         </ProductButtonsWrapper>
       </ProductContentWrapper>
     </ProductCardWrapper>

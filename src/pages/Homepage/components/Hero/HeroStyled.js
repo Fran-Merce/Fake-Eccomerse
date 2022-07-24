@@ -5,7 +5,7 @@ import { AiOutlineArrowDown } from 'react-icons/ai';
 export const HeroWrapperStyled = styled.div`
   position: relative;
   width: 100%;
-  min-height: calc(90vh - 90px);
+  min-height: calc(95vh - 90px);
   background-image: url('/src/assets/imgs/hero.jpg');
   padding: 0 2%;
   background-size: cover;
@@ -20,24 +20,28 @@ export const HeroWrapperStyled = styled.div`
 `;
 
 export const HeroContentStyled = styled.div`
-  max-width: 85%;
+  max-width: 95%;
   font-size: 1.1rem;
   padding: 0 2%;
-  font-family: 'Signika', sans-serif;
-  font-weight: 300;
+
   & h1 {
     color: var(--secondary-text);
+    font-family: 'Signika', sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
   }
   & p {
     color: var(--primary-text);
-    font-weight: bold;
+    font-family: 'Signika', sans-serif;
+    font-weight: 500;
   }
 
   @media (${mediaQueries.tablet}) {
-    max-width: 50%;
+    max-width: 80%;
+    font-size: 1.2rem;
   }
   @media (${mediaQueries.laptop}) {
-    max-width: 40%;
+    max-width: 45%;
     font-size: 1.2rem;
     padding-left: 2.5%;
     h1 {
@@ -55,6 +59,8 @@ export const HeroButtonStyled = styled.button`
   border-radius: 25px;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
+  color: #fff;
+  background-color: var(--black);
   :hover {
     background-color: #fff;
     color: #000;
@@ -68,4 +74,5 @@ export const ArrowButtonStyled = styled(AiOutlineArrowDown)`
   left: 0;
   bottom: 1.2rem;
   margin: auto;
+  color: #fff;
 `;

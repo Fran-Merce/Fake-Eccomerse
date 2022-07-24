@@ -76,6 +76,7 @@ export const ProductBtn = styled.button`
   background-color: transparent;
   font-size: 0.8rem;
   letter-spacing: 1px;
+  color: var(--primary-text);
   &:hover {
     background-color: #fff;
     color: #000;
@@ -83,19 +84,18 @@ export const ProductBtn = styled.button`
   }
 `;
 
-export const ProductQuantity = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-
+export const ProductQuantity = styled.button`
   font-family: 'Signika', sans-serif;
   border: 1px solid var(--grey);
   min-width: 90px;
   padding: 0.4rem 0;
   background-color: transparent;
-  font-size: 1.1rem;
-
-  & > p {
-    font-size: 1.2rem;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  color: var(--primary-text);
+  &:hover {
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
   }
 `;

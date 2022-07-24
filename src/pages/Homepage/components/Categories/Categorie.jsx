@@ -1,10 +1,22 @@
 import React from 'react';
 import { CategorieCard } from './CategoriesStyles';
-
-
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { TYPES } from '../../../../redux/TYPES';
 export const Categorie = ({ name, image, id }) => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleRedirect = () => {
+    dispatch({ type: TYPES.SET_CATEGORY, payload: name });
+    navigate('/products');
+  };
+
   return (
-    <CategorieCard color={id === 2 ? '--soft-black' : ''}>
+    <CategorieCard
+      onClick={handleRedirect}
+      color={id === 2 ? '--soft-black' : '--black'}
+    >
       <img src={image} alt='' />
       <h3>{name}</h3>
     </CategorieCard>

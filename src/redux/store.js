@@ -1,19 +1,18 @@
-import { authReducer } from './reducers/authReducer';
-import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
-import thunk from 'redux-thunk'
-
-
+import { createStore, applyMiddleware, compose } from 'redux';
+import { persistStore } from 'redux-persist';
+import thunk from 'redux-thunk';
+import { rootReducers } from './rootReducer';
 
 const composeEnhancers =
   (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
   compose;
 
-const rootReducers = combineReducers({
-  auth: authReducer,
-});
+const initialState = {};
 
 export const store = createStore(
   rootReducers,
-  {},
+  initialState,
   composeEnhancers(applyMiddleware(thunk))
 );
+
+export const persistor = persistStore(store);

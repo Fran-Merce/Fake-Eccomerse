@@ -24,8 +24,8 @@ export const CategoriesWrapper = styled.div`
 export const CategorieCard = styled.div`
   width: 100%;
   height: 25rem;
-
-  background-color: var(${props => (props.color ? '--soft-black' : '--black')});
+  color: #fff;
+  background-color: var(${props => props.color});
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -36,7 +36,7 @@ export const CategorieCard = styled.div`
   cursor: pointer;
 
   & img {
-    width: 90%;
+    width: 80%;
     object-fit: cover;
   }
   & h3 {

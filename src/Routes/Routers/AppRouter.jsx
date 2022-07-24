@@ -1,4 +1,3 @@
-
 import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
@@ -13,7 +12,7 @@ const AppRouter = () => {
       <Route path='/home' element={<HomePage />} />
       <Route path='/checkout' element={<CheckoutPage />} />
       <Route path='/products' element={<ProductsPage />} />
-      <Route path='/products/:id' element={<ProductPage />} />
+      <Route path='/product/:id' element={<ProductPage />} />
       <Route path='*' element={<HomePage />} />
     </Routes>
   );

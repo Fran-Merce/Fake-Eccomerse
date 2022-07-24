@@ -1,22 +1,17 @@
-
 import { AuthLayout } from '../Layout/AuthLayout';
 import {
   FormContentWrapper,
   FormErrorStyled,
   FormStyled,
-
   InputStyled,
   SubmitButton,
 } from '../Ui/FormStyles';
 
-import {useFormik} from 'formik';
+import { useFormik } from 'formik';
 import { validationSchemaLogin } from '../validation/schemas';
-import { startLogin } from '../../../redux/actions/authActions';
+import { startLogin } from '../../../redux/auth/authActions';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-
-
-
 
 const LoginPage = () => {
   const initialValues = {
@@ -25,8 +20,7 @@ const LoginPage = () => {
   };
   const dispatch = useDispatch();
 
-  const handleSubmitForm = (values) => {
-
+  const handleSubmitForm = values => {
     dispatch(startLogin(values));
   };
 

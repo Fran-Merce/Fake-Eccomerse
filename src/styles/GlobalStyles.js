@@ -20,10 +20,10 @@ export const GlobalStyles = createGlobalStyle`
   /* font-family: 'Poppins', sans-serif; */
   text-decoration: none;
   list-style: none;
-  color:  var(--primary-text);
 }
 
 body{
+  /* color:  var(--primary-text); */
   background-color: var(--black);
 }
 

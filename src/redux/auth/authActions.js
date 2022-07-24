@@ -2,8 +2,8 @@ import {
   loginWithEmailAndPassword,
   registerWithEmailAndPassword,
   singInWithGoogle,
-} from '../../../firebase/providers';
-import { TYPES } from '../../TYPES'
+} from '../../firebase/providers';
+import { TYPES } from '../TYPES';
 
 export const startSingInWithGoogle = () => async dispatch => {
   dispatch({ type: TYPES.CHECKING_AUTH });
@@ -21,8 +21,6 @@ export const startSingInWithEmailandPass = formValues => async dispatch => {
   return dispatch({ type: TYPES.AUTH_LOGIN, payload: result.user });
 };
 
-
-
 export const startLogin =
   ({ email, password }) =>
   async dispatch => {
@@ -39,3 +37,4 @@ export const login = payload => ({
   payload: payload,
 });
 
+export * as authActions from './authActions';
