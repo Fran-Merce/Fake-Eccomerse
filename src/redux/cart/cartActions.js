@@ -13,3 +13,9 @@ export const removeProductAction = product => {
     payload: product,
   };
 };
+
+export const handleCartToggleAction = () => {
+  return {
+    type: TYPES.HADLE_TOGGLE_CART,
+  };
+};

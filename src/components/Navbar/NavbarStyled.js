@@ -9,6 +9,7 @@ export const NavbarWrapperStyled = styled.nav`
   align-items: center;
   justify-content: space-between;
   padding: 0 1rem;
+  color: #fff;
 `;
 
 export const LinksWrapperStyled = styled.div`

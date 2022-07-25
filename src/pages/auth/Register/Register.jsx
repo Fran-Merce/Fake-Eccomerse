@@ -51,7 +51,7 @@ export const Register = () => {
               name='email'
               onChange={handleChange}
               onBlur={handleBlur}
-              value={values.email}
+              
               placeholder='youremail@gmail.com'
             />
             {errors.email && touched.email && (

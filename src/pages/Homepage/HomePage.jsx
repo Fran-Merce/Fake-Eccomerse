@@ -7,7 +7,6 @@ import { Hero } from './components/Hero/Hero';
 import { ProductsHome } from './components/ProductsHome/ProductsHome';
 
 const HomePage = () => {
-  console.log('first');
   return (
     <>
       <Hero />
@@ -15,7 +14,6 @@ const HomePage = () => {
       <ProductsHome title={'Mas Vendidos'} data={bestSellersProducts} />
       <ProductsHome title={'Recomendados'} data={reccomendedProducts} />
 
-      <SubscribeNewsletter />
       <Footer />
     </>
   );

@@ -14,24 +14,18 @@ import { TYPES } from '../../../../redux/TYPES';
 import { CartModalItem } from '../cardModalItem/CartModalItem';
 import { formatPrice } from '../../../../helpers/formatPrice';
 import payIcon from '../../../../assets/imgs/creditcard.gif';
-import { useNavigate } from 'react-router-dom';
+
 import { totalPrice } from '../../../../redux/cart/cartHelpers';
 import { FaTrash } from 'react-icons/fa';
+import { useCheckout } from '../../../../hooks/useCheckout';
 
 export const CartModal = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const handleCheckout = useCheckout();
   const { shippingCost, cart } = useSelector(state => state.cart);
-  const { status } = useSelector(state => state.auth);
+
   const total = totalPrice(cart);
   const subtotal = formatPrice(total + shippingCost);
-  const handleCheckout = () => {
-    if (status === 'authenticated') {
-      return navigate('/checkout');
-    }
-    navigate('/auth/login');
-    dispatch({ type: TYPES.HADLE_TOGGLE_CART });
-  };
 
   return (
     <CartModalStyled

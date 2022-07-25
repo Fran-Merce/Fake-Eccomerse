@@ -43,7 +43,6 @@ const LoginPage = () => {
               type='email'
               name='email'
               onChange={handleChange}
-              value={values.email}
               onBlur={handleBlur}
               placeholder='youremail@gmail.com'
             />

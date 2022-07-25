@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { mediaQueries } from '../../../../styles/mediaQueries';
-
-export const ProductHomeStyled = styled.div`
+import { motion } from 'framer-motion';
+export const ProductHomeStyled = styled(motion.div)`
   /* background-color: var(--soft-black); */
   margin-top: 1.2rem;
   width: 100%;
@@ -20,6 +20,7 @@ export const Title = styled.h2`
   font-size: 2.5rem;
   margin: 2rem;
   letter-spacing: 3px;
+  color: #fff;
 `;
 
 export const ProductCardsWrapper = styled.div`
