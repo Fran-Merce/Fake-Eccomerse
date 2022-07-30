@@ -9,19 +9,38 @@ import {
 
 import { useFormik } from 'formik';
 import { validationSchemaLogin } from '../validation/schemas';
-import { startLogin } from '../../../redux/auth/authActions';
-import { useDispatch } from 'react-redux';
+
 import { Link } from 'react-router-dom';
+
+import Swal from 'sweetalert2';
+import {
+  createUserProfileDocument,
+  singInUser,
+} from '../../../firebase/firebase-utils';
+import { useRedirect } from '../../../hooks/useRedirect';
 
 const LoginPage = () => {
   const initialValues = {
     email: '',
     password: '',
   };
-  const dispatch = useDispatch();
 
-  const handleSubmitForm = values => {
-    dispatch(startLogin(values));
+  const handleSubmitForm = async values => {
+    try {
+      const { user } = await singInUser({ ...values });
+      createUserProfileDocument(user);
+      
+    } catch (error) {
+      console.log(error);
+      if (error.code === 'auth/user-not-found') {
+        Swal.fire('Error', 'El usuario no fue encontrado', 'error');
+      } else if (error.code === 'auth/wrong-password') {
+        Swal.fire('Error', 'La contraseña es incorrecta', 'error');
+      } else {
+        Swal.fire('Error', 'upps ocurrio un error en el inicio de sesion', 'error');
+      }
+    }
+
   };
 
   const { handleSubmit, handleChange, values, touched, errors, handleBlur } =
@@ -30,7 +49,7 @@ const LoginPage = () => {
       validationSchema: validationSchemaLogin,
       onSubmit: handleSubmitForm,
     });
-
+  useRedirect('/');
   return (
     <AuthLayout bg='login'>
       <FormStyled onSubmit={handleSubmit}>

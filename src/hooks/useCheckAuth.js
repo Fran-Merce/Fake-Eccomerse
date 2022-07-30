@@ -1,24 +1,26 @@
-import { firebaseAuth } from '../firebase/config';
-import { TYPES } from '../redux';
-
 import { onAuthStateChanged } from 'firebase/auth';
+import { onSnapshot } from 'firebase/firestore';
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { login } from '../redux/auth/authActions';
+import { useDispatch } from 'react-redux';
 
-export const useCheckingAuth = () => {
+import { auth, createUserProfileDocument } from '../firebase/firebase-utils';
+import { setCurrentUserAction } from '../redux/auth/authActions';
+
+function onAuthStateChange(cb, action) {
+  onAuthStateChanged(auth, async userAuth => {
+    if (userAuth) {
+      const userRef = await createUserProfileDocument(userAuth);
+      if (!userRef) return cb(action(null));
+      onSnapshot(userRef, snapShot =>
+        cb(action({ id: snapShot.id, ...snapShot.data() }))
+      );
+    } else {
+      cb(action(null));
+    }
+  });
+}
+
+export const useAuthCheck = () => {
   const dispatch = useDispatch();
-  const { status } = useSelector(state => state.auth);
-
-  useEffect(() => {
-    onAuthStateChanged(firebaseAuth, async user => {
-      dispatch({ type: TYPES.CHECKING_AUTH });
-      if (!user) return dispatch({ type: 'AUTH_LOGOUT' });
-
-      const { uid, email, displayName, photoURL } = user;
-      return dispatch(login({ uid, email, displayName, photoURL }));
-    });
-  }, []);
-
-  return status;
+  useEffect(() => onAuthStateChange(dispatch, setCurrentUserAction), [dispatch]);
 };

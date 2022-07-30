@@ -1,3 +1,4 @@
+import { AnimatePresence } from 'framer-motion';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -21,22 +22,29 @@ export const ProductCard = ({ product } = {}) => {
     navigate(`/product/${id}`);
   };
   return (
-    <ProductCardWrapper>
-      <ProductCardImgWrapper>
-        <img src={image} alt='' />
-      </ProductCardImgWrapper>
+  
+      <ProductCardWrapper
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.3 }}
+      >
+        <ProductCardImgWrapper>
+          <img src={image} alt='' />
+        </ProductCardImgWrapper>
 
-      <ProductContentWrapper>
-        <h3>{name}</h3>
-        <p>{description}</p>
-        <Price>{formatPrice(price)}</Price>
-        <ProductButtonsWrapper>
-          <ProductQuantity onClick={hadleNavigate}>VER</ProductQuantity>
-          <ProductBtn onClick={() => dispatch(addProductAction(product))}>
-            AGREGAR
-          </ProductBtn>
-        </ProductButtonsWrapper>
-      </ProductContentWrapper>
-    </ProductCardWrapper>
+        <ProductContentWrapper>
+          <h3>{name}</h3>
+          <p>{description}</p>
+          <Price>{formatPrice(price)}</Price>
+          <ProductButtonsWrapper>
+            <ProductQuantity onClick={hadleNavigate}>VER</ProductQuantity>
+            <ProductBtn onClick={() => dispatch(addProductAction(product))}>
+              AGREGAR
+            </ProductBtn>
+          </ProductButtonsWrapper>
+        </ProductContentWrapper>
+      </ProductCardWrapper>
+   
   );
 };

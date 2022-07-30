@@ -22,6 +22,7 @@ export const CategoriesWrapper = styled.div`
 `;
 
 export const CategorieCard = styled.div`
+text-transform: capitalize;
   width: 100%;
   height: 25rem;
   color: #fff;

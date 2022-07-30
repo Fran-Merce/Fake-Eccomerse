@@ -9,14 +9,13 @@ import {
   SecondaryImageWrapper,
 } from './ProductGalleryStyles';
 export const ProductsGallery = ({ images = [] }) => {
-  console.log(images);
   const [currentImage, setCurrentImage] = useState(images[0].url);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const handleHover = idImg => {
-    if (idImg === currentIndex) return;
-    setCurrentIndex(idImg);
-    setCurrentImage(images[idImg]?.url);
+  const handleHover = index => {
+    if (index === currentIndex) return;
+    setCurrentIndex(index);
+    setCurrentImage(images[index]?.url);
   };
 
   return (
@@ -25,13 +24,13 @@ export const ProductsGallery = ({ images = [] }) => {
         <PrimaryImage src={currentImage} alt='' />
       </PrimaryImageWrapper>
       <SecondaryImagesWrapper>
-        {images.map(({ idImg, url }) => {
+        {images.map((img, index) => {
           return (
             <SecondaryImageWrapper
-              key={idImg}
-              onMouseEnter={() => handleHover(idImg)}
+              key={index}
+              onMouseEnter={() => handleHover(index)}
             >
-              <img key={idImg} src={url} />
+              <img key={index} src={img.url} />
             </SecondaryImageWrapper>
           );
         })}

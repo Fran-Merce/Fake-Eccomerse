@@ -1,13 +1,21 @@
 import { Navbar } from './components/Navbar/Navbar';
-import { MainRouter } from './Routes/MainRouter';
+
 import { GlobalStyles } from './styles/GlobalStyles';
+import { AppLayout } from './components/Layout/AppLayout';
+
+import { useAuthCheck } from './hooks/useCheckAuth';
+import AppRouter from './Routes/Routers/AppRouter';
+
+
+
 function App() {
+  useAuthCheck()
   return (
-    <>
+    <AppLayout>
       <Navbar />
-      <MainRouter />
+      <AppRouter />
       <GlobalStyles />
-    </>
+    </AppLayout>
   );
 }
 

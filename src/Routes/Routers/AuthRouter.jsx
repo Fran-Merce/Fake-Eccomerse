@@ -1,18 +1,18 @@
 import { lazy } from 'react';
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
+
+import HomePage from '../../pages/Homepage/HomePage';
 const RegisterPage = lazy(() => import('../../pages/auth/Register/Register'));
-const LoginPage = lazy(() => import('../..//pages/auth/Login/LoginPage'));
+const LoginPage = lazy(() => import('../../pages/auth/Login/LoginPage'));
+const ForgotPassword = lazy(() => import('../../pages/auth/ForgotPassword/ForgotPassword'));
 
-
-const AuthRouter = ({ status }) => {
-  if (status === 'authenticated') {
-    return <Navigate to='/home' />;
-  }
+const AuthRouter = () => {
   return (
     <Routes>
       <Route path='/register' element={<RegisterPage />} />
       <Route path='/login' element={<LoginPage />} />
-      <Route path='*' element={<LoginPage />} />
+      <Route path='/forgot' element={<ForgotPassword />} />
+      <Route path='*' element={<HomePage />} />
     </Routes>
   );
 };

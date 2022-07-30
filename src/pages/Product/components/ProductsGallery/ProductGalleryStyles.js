@@ -9,12 +9,10 @@ export const ProductGalleryWrapper = styled.div`
   @media (${mediaQueries.tablet}) {
     width: 40%;
   }
-  /* height: 30vh; */
-  /* border: 1px solid red; */
 `;
 export const PrimaryImageWrapper = styled.div`
   width: 320px;
-  height: 30vh;
+  min-height: 30vh;
 
   @media (${mediaQueries.mobile}) {
     width: 400px;
@@ -31,7 +29,7 @@ export const SecondaryImagesWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  /* gap: 5px; */
+
   @media (${mediaQueries.mobile}) {
     gap: 10px;
   }
@@ -39,7 +37,7 @@ export const SecondaryImagesWrapper = styled.div`
 export const SecondaryImageWrapper = styled.div`
   width: 30%;
   max-height: 100px;
-  /* border: 1px solid red; */
+
   &:hover {
     cursor: pointer;
     background-color: rgba(255, 255, 255, 0.1);
@@ -54,6 +52,7 @@ export const SecondaryImageWrapper = styled.div`
     height: 100px;
   }
   @media (${mediaQueries.tablet}) {
+    min-width: 90px;
     width: 160px;
   }
 `;

@@ -9,34 +9,29 @@ export const bestSellersProducts = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, se lorem lorem lorem',
     category: 'Teclado',
+    brand: 'HyperX',
+    warranty: '12 meses',
     images: [
       {
         url: 'https://cdn.shopify.com/s/files/1/0564/3612/9997/products/hyperx_alloy_origins_65_english_us_aqua_1_top_down_300x.jpg?v=1655760987',
-        idImg: 0,
       },
       {
         url: 'https://cdn.shopify.com/s/files/1/0564/3612/9997/products/hyperx_alloy_origins_65_english_us_aqua_2_angled_left_300x.jpg?v=1655760987',
-        idImg: 1,
       },
       {
         url: 'https://cdn.shopify.com/s/files/1/0564/3612/9997/products/hyperx_alloy_origins_65_english_us_aqua_1_top_down_300x.jpg?v=1655760987',
-        idImg: 2,
       },
       {
         url: 'https://cdn.shopify.com/s/files/1/0564/3612/9997/products/hyperx_alloy_fps_pro_1_us_main_a0215554-cca4-4ef3-b904-8d0b54585f7a_300x.jpg?v=1655754825',
-        idImg: 3,
       },
     ],
     details: {
-      name: 'Product 1',
-      switchType: 'blue',
-      brand: 'Logitech',
-      model: 'G502',
-      warranty: '12 meses',
-      weight: '0.5 kg',
-      size: '60%',
-      rgb: 'si',
-      keycaps: 'ksmw',
+      switchType: 'Switches cherry blue',
+      model: 'Modelo G502',
+      weight: 'Peso 0.5 kg',
+      size: 'Teclado 60%',
+      rgb: 'RGB: si',
+      keycaps: 'Keycaps: ksmw',
     },
   },
   {
@@ -47,34 +42,29 @@ export const bestSellersProducts = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, se lorem lorem lorem',
     category: 'Monitor',
+    brand: 'HyperX',
+    warranty: '6 meses',
     images: [
       {
         url: 'https://cdn.shopify.com/s/files/1/0564/3612/9997/products/hyperx_alloy_origins_65_english_us_aqua_1_top_down_300x.jpg?v=1655760987',
-        idImg: 0,
       },
       {
         url: 'https://cdn.shopify.com/s/files/1/0564/3612/9997/products/hyperx_alloy_origins_65_english_us_aqua_2_angled_left_300x.jpg?v=1655760987',
-        idImg: 1,
       },
       {
         url: 'https://cdn.shopify.com/s/files/1/0564/3612/9997/products/hyperx_alloy_origins_65_english_us_aqua_1_top_down_300x.jpg?v=1655760987',
-        idImg: 2,
       },
       {
         url: 'https://cdn.shopify.com/s/files/1/0564/3612/9997/products/hyperx_alloy_fps_pro_1_us_main_a0215554-cca4-4ef3-b904-8d0b54585f7a_300x.jpg?v=1655754825',
-        idImg: 3,
       },
     ],
     details: {
-      name: 'Product 1',
-      switchType: 'blue',
-      brand: 'Logitech',
-      model: 'G502',
-      warranty: '12 meses',
-      weight: '0.5 kg',
-      size: '60%',
-      rgb: 'si',
-      keycaps: 'ksmw',
+      switchType: 'Switches cherry blue',
+      model: 'Modelo G502',
+      weight: 'Peso 0.5 kg',
+      size: 'Teclado 60%',
+      rgb: 'RGB: si',
+      keycaps: 'Keycaps: ksmw',
     },
   },
   {
@@ -85,34 +75,29 @@ export const bestSellersProducts = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, se lorem lorem lorem',
     category: 'Mouses',
+    brand: 'Redragon',
+    warranty: '12 meses',
     images: [
       {
         url: 'https://cdn.shopify.com/s/files/1/0564/3612/9997/products/hyperx_alloy_origins_65_english_us_aqua_1_top_down_300x.jpg?v=1655760987',
-        idImg: 0,
       },
       {
         url: 'https://cdn.shopify.com/s/files/1/0564/3612/9997/products/hyperx_alloy_origins_65_english_us_aqua_2_angled_left_300x.jpg?v=1655760987',
-        idImg: 1,
       },
       {
         url: 'https://cdn.shopify.com/s/files/1/0564/3612/9997/products/hyperx_alloy_origins_65_english_us_aqua_1_top_down_300x.jpg?v=1655760987',
-        idImg: 2,
       },
       {
         url: 'https://cdn.shopify.com/s/files/1/0564/3612/9997/products/hyperx_alloy_fps_pro_1_us_main_a0215554-cca4-4ef3-b904-8d0b54585f7a_300x.jpg?v=1655754825',
-        idImg: 3,
       },
     ],
     details: {
-      name: 'Product 1',
-      switchType: 'blue',
-      brand: 'Logitech',
-      model: 'G502',
-      warranty: '12 meses',
-      weight: '0.5 kg',
-      size: '60%',
-      rgb: 'si',
-      keycaps: 'ksmw',
+      switchType: 'Switches cherry blue',
+      model: 'Modelo G502',
+      weight: 'Peso 0.5 kg',
+      size: 'Teclado 60%',
+      rgb: 'RGB: si',
+      keycaps: 'Keycaps: ksmw',
     },
   },
 ];

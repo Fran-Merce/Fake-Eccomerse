@@ -17,4 +17,12 @@ export const PrimaryButton = styled.button`
     background-color: #fff;
     color: #000;
   }
+  &:disabled{
+    opacity: 0.3;
+    cursor: not-allowed;
+    :hover{
+      background-color: transparent;
+      color: #fff;
+    }
+  }
 `;

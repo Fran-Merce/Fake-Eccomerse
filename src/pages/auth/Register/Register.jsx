@@ -1,5 +1,8 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useFormik } from 'formik';
+import { createUser, singInWithGoogle } from '../../../firebase/firebase-utils';
 import { AuthLayout } from '../Layout/AuthLayout';
+import { validationSchemaRegister } from '../validation/schemas';
+import { AiFillGoogleCircle } from 'react-icons/ai';
 import {
   FormButtonWrapper,
   FormContentWrapper,
@@ -8,27 +11,28 @@ import {
   InputStyled,
   SubmitButton,
 } from '../Ui/FormStyles';
-import { bindActionCreators } from 'redux';
-import { authActions } from '../../../redux/auth/authActions';
-import { useFormik } from 'formik';
-import { validationSchemaRegister } from '../validation/schemas';
-import { AiFillGoogleCircle } from 'react-icons/ai';
+import { useRedirect } from '../../../hooks/useRedirect';
+import Swal from 'sweetalert2';
 
 const initialValues = {
-  email: '',
-  password: '',
-  displayName: '',
+  email: 'franmerce1@gmail.com',
+  password: '412412asflg;fsa',
+  displayName: 'fsafokaskofaosk',
 };
 
 export const Register = () => {
-  const dispatch = useDispatch();
-  const { startSingInWithGoogle, startSingInWithEmailandPass } = bindActionCreators(
-    authActions,
-    dispatch
-  );
+  useRedirect('/');
 
-  const handleSubmitForm = values => {
-    startSingInWithEmailandPass(values);
+  const handleSubmitForm = async (values, actions) => {
+    console.log(values);
+    try {
+      await createUser({ ...values });
+    } catch (error) {
+      if (error.code === 'auth/email-already-in-use')
+        Swal.fire('Error', error.code, 'error');
+    }
+
+    actions.resetForm();
   };
 
   const { handleSubmit, handleChange, values, touched, errors, handleBlur } =
@@ -51,7 +55,6 @@ export const Register = () => {
               name='email'
               onChange={handleChange}
               onBlur={handleBlur}
-              
               placeholder='youremail@gmail.com'
             />
             {errors.email && touched.email && (
@@ -93,7 +96,7 @@ export const Register = () => {
         </FormContentWrapper>
         <FormButtonWrapper>
           <SubmitButton type='submit'>Submit</SubmitButton>
-          <SubmitButton onClick={startSingInWithGoogle}>
+          <SubmitButton type='button' onClick={singInWithGoogle}>
             <AiFillGoogleCircle size='1.5rem'></AiFillGoogleCircle>
             Google
           </SubmitButton>

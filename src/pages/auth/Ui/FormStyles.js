@@ -2,8 +2,6 @@ import { mediaQueries } from '../../../styles/mediaQueries';
 
 import styled from 'styled-components';
 
-
-
 export const FormContentWrapper = styled.div`
   width: 100%;
   display: flex;
@@ -11,7 +9,7 @@ export const FormContentWrapper = styled.div`
   align-items: center;
   justify-content: space-around;
   gap: 1.5rem;
-
+  color: #fff;
   & div {
     width: 80%;
     display: flex;
@@ -27,7 +25,8 @@ export const FormContentWrapper = styled.div`
   }
 `;
 
-export const FormStyled= styled.form`
+export const FormStyled = styled.form`
+  color: #fff;
   width: 450px;
   height: 70%;
   display: flex;
@@ -37,6 +36,7 @@ export const FormStyled= styled.form`
   backdrop-filter: blur(3px);
   gap: 3rem;
   background-color: rgba(0, 0, 0, 0.7);
+  font-family: 'Signika', sans-serif;
   h1 {
     font-size: 2.5rem;
     font-family: monospace;
@@ -55,6 +55,7 @@ export const FormButtonWrapper = styled.div`
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  font-family: 'Signika', sans-serif;
 `;
 export const SubmitButton = styled.button`
   min-width: 90px;
@@ -70,6 +71,8 @@ export const SubmitButton = styled.button`
   transition: all 0.3s ease-in-out;
   border-radius: 5px;
   justify-content: center;
+  font-family: 'Signika', sans-serif;
+  color: #fff;
   &:hover {
     background-color: var(--black);
   }
@@ -77,10 +80,11 @@ export const SubmitButton = styled.button`
 
 export const InputStyled = styled.input`
   width: 100%;
-  padding: 0.2rem 0.5rem;
+  padding: 0.4rem 0.5rem;
   border-radius: 5px;
   border: 1px solid ${props => props.error && 'red'};
   background-color: transparent;
   color: #fff;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+  font-family: 'Poppins', sans-serif;
 `;

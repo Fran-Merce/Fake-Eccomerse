@@ -14,12 +14,18 @@ import {
 import { formatPrice } from '../../../../helpers/formatPrice';
 import { useDispatch } from 'react-redux';
 import { addProductAction } from '../../../../redux/cart/cartActions';
-import { useCheckout } from '../../../../hooks/useCheckout';
+import { useNavigate } from 'react-router-dom';
+
 export const ProductInfo = ({ product }) => {
-  const { name, price, description, details } = product;
-  const { switchType, brand, model, warranty, weight, size, rgb, keycaps } = details;
-  const handleCheckout = useCheckout();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
+  const { name, price, details, warranty, brand } = product;
+
+  const handleCheckout = () => {
+    dispatch(addProductAction(product));
+    navigate('/checkout');
+  };
+
   return (
     <ProductInfoWrapper>
       <ProductInfoHeader>
@@ -32,26 +38,26 @@ export const ProductInfo = ({ product }) => {
       <ProductInfoBody>
         <ProductInfoContent>
           <h3>Informacion Tecnica</h3>
-          <p>Switches: {switchType}</p>
-          <p>tamaño: {size}</p>
-          <p>peso: {weight}</p>
-          <p>Rgb: {rgb}</p>
-          <p>keycaps: {keycaps}</p>
-          <p>modelo: {model}</p>
+          {Object.values(details).map((detail, index) => (
+            <p key={index}>{detail}</p>
+          ))}
         </ProductInfoContent>
         <hr />
         <ProductInfoContent color={'#3fff50'}>
           <ProductInfoText>
             <BsShieldCheck /> Garantia <span>{warranty}</span>
           </ProductInfoText>
-          <p>
+          <ProductInfoText>
             <AiOutlineCheck /> Stock disponible
-          </p>
-          <p>
+          </ProductInfoText>
+          <ProductInfoText>
             <MdOutlineLocalShipping /> Envio a todo el pais
-          </p>
+          </ProductInfoText>
         </ProductInfoContent>
-        <p>{description}</p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, se lorem lorem
+          lorem
+        </p>
       </ProductInfoBody>
       <BtnWrapper>
         <ProductBtn onClick={handleCheckout}>Comprar</ProductBtn>

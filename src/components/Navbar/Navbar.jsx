@@ -1,5 +1,6 @@
-import { Link, Navigate, useNavigate } from 'react-router-dom';
 import {
+  CartIconWrapper,
+  LinkStyled,
   LinksWrapperStyled,
   LogoStyled,
   ModalOverlayStyled,
@@ -7,44 +8,40 @@ import {
 } from './NavbarStyled';
 import { HiShoppingCart } from 'react-icons/hi';
 import { TYPES } from '../../redux/TYPES';
-import { logoutFirebase } from '../../firebase/providers';
+
 import { useSelector } from 'react-redux';
 import { CartModal } from './cart/CardModal/CartModal';
 import { useDispatch } from 'react-redux';
 import { AnimatePresence } from 'framer-motion';
+import { auth } from '../../firebase/firebase-utils';
 export const Navbar = () => {
-  const { status } = useSelector(state => state.auth);
-  const { hidden } = useSelector(state => state.cart);
-  const navigate = useNavigate();
+  const { hidden, cart } = useSelector(state => state.cart);
+  const { currentUser } = useSelector(state => state.auth);
   const dispatch = useDispatch();
-  const handleLogout = () => {
-    logoutFirebase();
-    navigate('/auth/login');
-  };
+  const cartItems = cart.map(item => item.quantity);
 
+  const logOut = () => {
+    auth.signOut();
+  };
   return (
     <NavbarWrapperStyled>
-      <Link to='/home'>
+      <LinkStyled to='/'>
         <LogoStyled src={'/src/assets/imgs/logo.svg'} />
-      </Link>
+      </LinkStyled>
       <LinksWrapperStyled>
-        <Link to='/home'>Home</Link>
-        <Link to='/products'>Products</Link>
-        {status === 'authenticated' ? (
-          <Link to='/auth/logout' onClick={handleLogout}>
-            Logout
-          </Link>
+        <LinkStyled to='/'>Home</LinkStyled>
+        <LinkStyled to='/products'>Products</LinkStyled>
+        {currentUser ? (
+          <p onClick={logOut}>Logout</p>
         ) : (
-          <Link to='/auth/login'>Login</Link>
+          <LinkStyled to='/auth/login'>Login</LinkStyled>
         )}
-
-        <HiShoppingCart
-          size='1.3rem'
-          color='white'
-          onClick={() => dispatch({ type: TYPES.HADLE_TOGGLE_CART })}
-        />
+        <CartIconWrapper onClick={() => dispatch({ type: TYPES.HADLE_TOGGLE_CART })}>
+          <p>{cartItems.length === 0 ? 0 : cartItems}</p>
+          <HiShoppingCart size='1.3rem' color='white' />
+        </CartIconWrapper>
       </LinksWrapperStyled>
-      <AnimatePresence>{!hidden && <CartModal />}</AnimatePresence>
+      <AnimatePresence>{hidden === false && <CartModal />}</AnimatePresence>
       <AnimatePresence>
         {!hidden && (
           <ModalOverlayStyled

@@ -13,20 +13,24 @@ import { useDispatch, useSelector } from 'react-redux';
 import { TYPES } from '../../../../redux/TYPES';
 import { CartModalItem } from '../cardModalItem/CartModalItem';
 import { formatPrice } from '../../../../helpers/formatPrice';
-import payIcon from '../../../../assets/imgs/creditcard.gif';
-
 import { totalPrice } from '../../../../redux/cart/cartHelpers';
 import { FaTrash } from 'react-icons/fa';
-import { useCheckout } from '../../../../hooks/useCheckout';
+// import { useCheckout, useRedirect } from '../../../../hooks/useRedirect';
+import {useNavigate} from 'react-router-dom'
+import payIcon from '../../../../assets/imgs/creditcard.gif';
+import { handleCartToggleAction } from '../../../../redux/cart/cartActions';
 
 export const CartModal = () => {
   const dispatch = useDispatch();
-  const handleCheckout = useCheckout();
+  const navigate = useNavigate();
   const { shippingCost, cart } = useSelector(state => state.cart);
 
-  const total = totalPrice(cart);
-  const subtotal = formatPrice(total + shippingCost);
-
+  const subTotal = totalPrice(cart);
+  const total = formatPrice(subTotal + shippingCost);
+  const handleCheckout = () => {
+    navigate('/checkout') 
+    dispatch(handleCartToggleAction())
+  }
   return (
     <CartModalStyled
       initial={{ y: -200 }}
@@ -43,7 +47,6 @@ export const CartModal = () => {
 
       <CartModalHeader>
         <h2>Mis Productos</h2>
-        <p>Total: ${total}</p>
       </CartModalHeader>
       <CartModalBody>
         <ClearCartBtn
@@ -52,8 +55,9 @@ export const CartModal = () => {
         >
           <FaTrash color='#fff' />
         </ClearCartBtn>
+
         {!cart.length ? (
-          <p style={{ fontSize: '2rem' }}>Carrito Vacio</p>
+          <p>Carrito Vacio</p>
         ) : (
           cart.map(item => <CartModalItem key={item.id} product={item} />)
         )}
@@ -61,7 +65,7 @@ export const CartModal = () => {
       <CartModalFooter>
         <CartModalFooterText>
           <p>Subtotal</p>
-          <span>{subtotal}</span>
+          <span>{formatPrice(subTotal)}</span>
         </CartModalFooterText>
         <CartModalFooterText>
           <p>Envio</p>
@@ -70,10 +74,10 @@ export const CartModal = () => {
         <hr />
         <CartModalFooterText>
           <p>Total</p>
-          <span>{formatPrice(total)}</span>
+          <span>{total}</span>
         </CartModalFooterText>
-        <CartModalCheckoutBtn disabled={!cart.length} onClick={handleCheckout}>
-          Completar Compra{' '}
+        <CartModalCheckoutBtn disabled={!cart.length} onClick={handleCheckout }>
+          Completar Compra
           <span>
             Alla voy <img src={payIcon} alt='' />
           </span>

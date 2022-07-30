@@ -52,7 +52,7 @@ export const ProductInfoText = styled.p`
   font-weight: 300;
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 7px;
 `;
 
 export const BtnWrapper = styled.div`

@@ -10,11 +10,12 @@ const INITIAL_STATE = {
 export const cartReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case TYPES.HADLE_TOGGLE_CART:
+      console.log(state.hidden)
       return {
         ...state,
         hidden: !state.hidden,
       };
-    case TYPES.ADD_TO_CART:
+      case TYPES.ADD_TO_CART:
       return {
         ...state,
         cart: addItemToCart(state.cart, action.payload),

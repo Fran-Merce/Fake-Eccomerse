@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { mediaQueries } from '../../../../styles/mediaQueries';
 import { motion } from 'framer-motion';
-import { HiOutlineArrowNarrowLeft, HiX } from 'react-icons/hi';
+import { HiX } from 'react-icons/hi';
 export const CartModalStyled = styled(motion.div)`
   position: absolute;
   top: 0;
@@ -39,22 +39,22 @@ export const CartModalHeader = styled.div`
 `;
 export const BackBtnStyled = styled(HiX)`
   position: absolute;
-  top: 2px;
-  left: 2px;
-  width: 25px;
-  height: 25px;
+  top: 1rem;
+  right: 1rem;
+  width: 1.7rem;
+  height: 1.7rem;
 
-  /* margin: 0.5rem; */
   display: flex;
   align-items: center;
   justify-content: center;
-
   border-radius: 50%;
   color: var(--black);
-
+  border: none;
+  transition: transform 0.2s ease-in-out;
   :hover {
     color: red !important;
     cursor: pointer;
+    transform: scale(1.1);
   }
 `;
 export const CartModalBody = styled.div`
@@ -62,7 +62,7 @@ export const CartModalBody = styled.div`
   width: 100%;
   min-height: 350px;
   max-height: 500px;
-  /* overflow: auto; */
+
   margin-top: 0.5rem;
   padding: 0.5rem;
   display: flex;
@@ -147,17 +147,18 @@ export const CartModalCheckoutBtn = styled.button`
 
 export const ClearCartBtn = styled.button`
   position: absolute;
-  top: -10px;
+  top: -5px;
   right: 5px;
-  width: 35px;
-  height: 35px;
-
+  width: 2rem;
+  height: 2rem;
+  border: none;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: red;
   cursor: pointer;
+  transition: transform 0.2s ease-in-out;
   :disabled {
     cursor: not-allowed;
   }
@@ -167,6 +168,7 @@ export const ClearCartBtn = styled.button`
   }
   :hover {
     background-color: #9e0000;
+    transform: scale(1.1);
   }
   @media (${mediaQueries.mobile}) {
     width: 42px;
