@@ -16,6 +16,7 @@ import {
 
 export const ProductCard = ({ product } = {}) => {
   const { id, price, name, image, description } = product;
+  console.log(image);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const hadleNavigate = () => {
