@@ -1,57 +1,52 @@
 import React, { useState } from 'react';
 import Cards from 'react-credit-cards';
-import 'react-credit-cards/es/styles-compiled.css';
+import { useFormik } from 'formik';
+import { initialPayInfoValues } from '../../../../formik/initialValues';
+import { validationSchemaPayInfo } from '../../../../formik/schemas';
+import { CheckoutBtn } from '../../../../components/UI/Buttons/CheckoutBtn/CheckoutBtn';
+import { useDispatch, useSelector } from 'react-redux';
+import { clearCartAction } from '../../../../redux/cart/cartActions';
+import Swal from 'sweetalert2';
 import {
-  clearNumber,
   formatCreditCardNumber,
   formatCVC,
   formatExpirationDate,
 } from './utils/formatPayInfo';
-import { useFormik } from 'formik';
-import { validationSchemaPayInfo } from '../../../auth/validation/schemas';
-import { initialCreditCardValues } from '../../../auth/validation/initialValues';
 import {
   CreditCardInfoWrapper,
   ExpiryAndCvcWrapper,
   FormPaymentStyled,
   InputPayStyled,
+  SmallStyled,
 } from './PaymentInfoStyles';
-import { CheckoutBtn } from '../../../../components/UI/Buttons/CheckoutBtn/CheckoutBtn';
-import { useDispatch } from 'react-redux';
-import { clearCartAction } from '../../../../redux/cart/cartActions';
-import Swal from 'sweetalert2';
+import 'react-credit-cards/es/styles-compiled.css';
+import { swalModalCongrats } from '../../../../helpers/swal/swal';
+import { useNavigate } from 'react-router-dom';
+import { handleInputChange } from './utils/handleInputChange';
 
 export const PaymentInfo = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { currentUser } = useSelector(state => state.auth);
   const [focused, setFocused] = useState('');
+
   const handleInputFocus = ({ target }) => setFocused(target.name);
 
   const handleSubmitPayment = () => {
     dispatch(clearCartAction());
-    Swal.fire(
-      'Pago realizado con exito',
-      'Toda la informacion del pago se envio al email',
-      'success'
+    Swal.fire(swalModalCongrats(currentUser?.displayName, currentUser?.email)).then(
+      result => {
+        if (result.isConfirmed) navigate('/products');
+      }
     );
   };
-  const { handleSubmit, handleChange, values, touched, errors, handleBlur } =
-    useFormik({
-      initialValues: initialCreditCardValues,
-      validationSchema: validationSchemaPayInfo,
-      onSubmit: handleSubmitPayment,
-    });
-  const handleInputChange = e => {
-    const { target } = e;
-    handleChange(e);
-    console.log(errors,'errors');
-    if (target.name === 'number') {
-      target.value = formatCreditCardNumber(target.value);
-    } else if (target.name === 'expiry') {
-      target.value = formatExpirationDate(target.value);
-    } else if (target.name === 'cvc') {
-      target.value = formatCVC(target.value);
-    }
-  };
+
+
+  const { handleSubmit, handleChange, values, touched, errors } = useFormik({
+    initialValues: initialPayInfoValues,
+    validationSchema: validationSchemaPayInfo,
+    onSubmit: handleSubmitPayment,
+  });
 
   return (
     <CreditCardInfoWrapper>
@@ -69,14 +64,14 @@ export const PaymentInfo = () => {
           <InputPayStyled
             type='text'
             name='number'
-            onChange={handleInputChange}
+            onChange={e => handleInputChange(e, handleChange)}
             onFocus={handleInputFocus}
             maxLength={19}
             placeholder='•••• •••• •••• ••••'
             autoComplete='off'
           />
           {errors.number && touched.number && (
-            <small style={{ color: 'var(--secondary-text)' }}>{errors.number}</small>
+            <SmallStyled>{errors.number}</SmallStyled>
           )}
         </label>
         <label>
@@ -84,14 +79,12 @@ export const PaymentInfo = () => {
           <InputPayStyled
             type='text'
             name='name'
-            onChange={handleInputChange}
+            onChange={e => handleInputChange(e, handleChange)}
             onFocus={handleInputFocus}
             placeholder='Your Name'
             autoComplete='off'
           />
-          {errors.name && touched.name && (
-            <small style={{ color: 'var(--secondary-text)' }}>{errors.name}</small>
-          )}
+          {errors.name && touched.name && <SmallStyled>{errors.name}</SmallStyled>}
         </label>
 
         <ExpiryAndCvcWrapper>
@@ -101,15 +94,13 @@ export const PaymentInfo = () => {
               maxLength={5}
               type='text'
               name='expiry'
-              onChange={handleInputChange}
+              onChange={e => handleInputChange(e, handleChange)}
               onFocus={handleInputFocus}
               placeholder='MM/YY'
               autoComplete='off'
             />
-            {errors.expiryDate && touched.expiryDate && (
-              <small style={{ color: 'var(--secondary-text)' }}>
-                {errors.expiryDate}
-              </small>
+            {errors.expiry && touched.expiry && (
+              <SmallStyled>{errors.expiry}</SmallStyled>
             )}
           </label>
           <label>
@@ -117,16 +108,49 @@ export const PaymentInfo = () => {
             <InputPayStyled
               type='text'
               name='cvc'
-              onChange={handleInputChange}
+              onChange={e => handleInputChange(e, handleChange)}
               onFocus={handleInputFocus}
               placeholder='***'
               autoComplete='off'
             />
-            {errors.cvv && touched.cvv && (
-              <small style={{ color: 'var(--secondary-text)' }}>{errors.cvv}</small>
-            )}
+            {errors.cvc && touched.cvc && <SmallStyled>{errors.cvc}</SmallStyled>}
           </label>
         </ExpiryAndCvcWrapper>
+        <label>
+          Provincia
+          <InputPayStyled
+            type='text'
+            name='province'
+            onChange={e => handleInputChange(e, handleChange)}
+            placeholder='Buenos Aires'
+          />
+          {errors.province && touched.province && (
+            <SmallStyled>{errors.province}</SmallStyled>
+          )}
+        </label>
+        <label>
+          Ciudad
+          <InputPayStyled
+            type='text'
+            name='city'
+            onChange={e => handleInputChange(e, handleChange)}
+            placeholder='Arrecifes'
+          />
+          {errors.city && touched.city && <SmallStyled>{errors.city}</SmallStyled>}
+        </label>
+        <label>
+          Direccion Y Numero
+          <InputPayStyled
+            type='text'
+            name='address'
+            onChange={e => handleInputChange(e, handleChange)}
+            onFocus={handleInputFocus}
+            placeholder='Calle falsa 123'
+          />
+          {errors.address && touched.address && (
+            <SmallStyled>{errors.address}</SmallStyled>
+          )}
+        </label>
       </FormPaymentStyled>
       <CheckoutBtn type='submit' handleOnClick={handleSubmit}>
         Pagar

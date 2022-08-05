@@ -12,7 +12,7 @@ export const FormPaymentStyled = styled.form`
   padding: 1rem;
   font-family: 'poppins', sans-serif;
   label{
-    color: var(--secondary-text);
+    color:#fff;
     font-size: .9rem;
   }
   @media screen and (${mediaQueries.laptop}) {
@@ -24,7 +24,7 @@ export const InputPayStyled = styled.input`
   display: block;
   width: 100%;
   border: none;
-  border-bottom: 1px solid ${({ error }) => (error ? '#FF0000' : '#ccc')};
+  border-bottom: 1px solid #ccc;
   background-color: transparent;
   margin: 0.5rem 0;
   padding: 0 0.25rem;
@@ -59,4 +59,8 @@ export const CreditCardInfoWrapper = styled.div`
     max-width:550px;
    
   }
+`
+
+export const SmallStyled = styled.small`
+  color: var(--secondary-text);
 `

@@ -1,7 +1,7 @@
 import { useFormik } from 'formik';
-import { createUser, singInWithGoogle } from '../../../firebase/firebase-utils';
+import {singInWithGoogle } from '../../../firebase/firebase-utils';
 import { AuthLayout } from '../Layout/AuthLayout';
-import { validationSchemaRegister } from '../validation/schemas';
+import { validationSchemaRegister } from '../../../formik/schemas';
 import { AiFillGoogleCircle } from 'react-icons/ai';
 import {
   FormButtonWrapper,
@@ -12,32 +12,20 @@ import {
   SubmitButton,
 } from '../Ui/FormStyles';
 import { useRedirect } from '../../../hooks/useRedirect';
-import Swal from 'sweetalert2';
 
-const initialValues = {
-  email: 'franmerce1@gmail.com',
-  password: '412412asflg;fsa',
-  displayName: 'fsafokaskofaosk',
-};
+import { initialValuesRegister } from '../../../formik/initialValues';
+import { handleSubmitFormRegister } from '../helpers/RegisterHandleSubmit';
 
 export const Register = () => {
   useRedirect('/');
 
-  const handleSubmitForm = async (values, actions) => {
-    try {
-      await createUser({ ...values });
-    } catch (error) {
-      if (error.code === 'auth/email-already-in-use')
-        Swal.fire('Error','El Email Ingresado ya esta registrado' , 'error');
-    }
-    actions.resetForm();
-  };
+ 
 
   const { handleSubmit, handleChange, values, touched, errors, handleBlur } =
     useFormik({
-      initialValues,
+      initialValues: initialValuesRegister,
       validationSchema: validationSchemaRegister,
-      onSubmit: handleSubmitForm,
+      onSubmit: handleSubmitFormRegister,
     });
 
   return (

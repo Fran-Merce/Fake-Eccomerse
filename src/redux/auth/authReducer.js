@@ -2,7 +2,7 @@ import { TYPES } from '../TYPES';
 
 const initialState = {
   currentUser: null,
-  checkingAuth: false,
+  checkingAuth: true,
 };
 
 export const authReducer = (state = initialState, action) => {

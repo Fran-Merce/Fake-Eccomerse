@@ -8,47 +8,20 @@ import {
 } from '../Ui/FormStyles';
 
 import { useFormik } from 'formik';
-import { validationSchemaLogin } from '../validation/schemas';
-
+import { validationSchemaLogin } from '../../../formik/schemas';
 import { Link } from 'react-router-dom';
-
-import Swal from 'sweetalert2';
-import {
-  createUserProfileDocument,
-  singInUser,
-} from '../../../firebase/firebase-utils';
 import { useRedirect } from '../../../hooks/useRedirect';
+import { initialValuesLogin } from '../../../formik/initialValues';
+import { handleSubmitFormLogin } from '../helpers/loginHandleSubmit';
 
 const LoginPage = () => {
   useRedirect('/');
-  const initialValues = {
-    email: '',
-    password: '',
-  };
 
-  const handleSubmitForm = async values => {
-    try {
-      const { user } = await singInUser({ ...values });
-      createUserProfileDocument(user);
-    } catch (error) {
-      console.log(error);
-      if (error.code === 'auth/user-not-found') {
-        Swal.fire('Error', 'El usuario no fue encontrado', 'error');
-      } else if (error.code === 'auth/wrong-password') {
-        Swal.fire('Error', 'La contraseña es incorrecta', 'error');
-      } else {
-        Swal.fire('Error', 'upps ocurrio un error en el inicio de sesion', 'error');
-      }
-    }
-
-  };
-
-  const { handleSubmit, handleChange, values, touched, errors, handleBlur } =
-    useFormik({
-      initialValues,
-      validationSchema: validationSchemaLogin,
-      onSubmit: handleSubmitForm,
-    });
+  const { handleSubmit, handleChange, values, touched, errors } = useFormik({
+    initialValues: initialValuesLogin,
+    validationSchema: validationSchemaLogin,
+    onSubmit: handleSubmitFormLogin,
+  });
 
   return (
     <AuthLayout bg='login'>
@@ -62,7 +35,6 @@ const LoginPage = () => {
               type='email'
               name='email'
               onChange={handleChange}
-              onBlur={handleBlur}
               placeholder='youremail@gmail.com'
             />
             {errors.email && touched.email && (
@@ -78,7 +50,6 @@ const LoginPage = () => {
               name='password'
               onChange={handleChange}
               value={values.password}
-              onBlur={handleBlur}
               placeholder='********'
               autoComplete='current-password'
             />
@@ -88,10 +59,10 @@ const LoginPage = () => {
           </div>
         </FormContentWrapper>
         <SubmitButton type='submit'>Login</SubmitButton>
-      <div>
-      <Link to='/auth/register'>no tenes cuenta?</Link>
-      <Link to='/auth/reset-password'>Olvidaste tu contraseña?</Link>
-      </div>
+        <div>
+          <Link to='/auth/register'>no tenes cuenta?</Link>
+          <Link to='/auth/reset-password'>Olvidaste tu contraseña?</Link>
+        </div>
       </FormStyled>
     </AuthLayout>
   );

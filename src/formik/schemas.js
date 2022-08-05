@@ -1,5 +1,5 @@
 import * as yup from 'yup';
-import { errorMessages } from '../../../formik/errorMessages';
+import { errorMessages } from './errorMessages';
 
 const { required, numberError, stringError } = errorMessages;
 
@@ -9,8 +9,8 @@ export const validationSchemaRegister = yup.object().shape({
   displayName: yup
     .string()
     .required('Required')
-    .min(1, 'displayName must be at least 1 characters')
-    .max(20, 'displayName must be at most 20 characters'),
+    .min(1, 'El nombre debe tener al menos 1 caracter')
+    .max(20, 'El nombre debe tener como maximo 20 caracteres'),
 });
 
 export const validationSchemaLogin = yup.object().shape({
@@ -18,7 +18,7 @@ export const validationSchemaLogin = yup.object().shape({
   password: yup
     .string()
     .required('Required')
-    .min(6, 'password must be at least 6 characters'),
+    .min(6, 'la contraseña debe tener al menos 6 caracteres'),
 });
 
 export const validationSchemaForgotPassword = yup.object().shape({
@@ -36,4 +36,15 @@ export const validationSchemaPayInfo = yup.object().shape({
     .min(19, 'Su tarjeta debe tener 16 dígitos'),
   cvc: yup.string().required(required).min(3, 'Debe tener almenos 3 dígitos'),
   expiry: yup.string().required(required).min(5, 'Formato Invalido'),
-});
+  city: yup
+    .string()
+    .required(required)
+    .matches(/^[^0-9]+$/, 'No se pueden ingresar numeros'),
+  province: yup
+    .string()
+    .required(required)
+    .matches(/^[^0-9]+$/, 'No se pueden ingresar numeros'),
+  address: yup
+    .string()
+    .required(required)
+})
