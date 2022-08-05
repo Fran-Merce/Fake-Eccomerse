@@ -1,5 +1,5 @@
 import { useFormik } from 'formik';
-import {singInWithGoogle } from '../../../firebase/firebase-utils';
+import { singInWithGoogle } from '../../../firebase/firebase-utils';
 import { AuthLayout } from '../Layout/AuthLayout';
 import { validationSchemaRegister } from '../../../formik/schemas';
 import { AiFillGoogleCircle } from 'react-icons/ai';
@@ -18,9 +18,6 @@ import { handleSubmitFormRegister } from '../helpers/RegisterHandleSubmit';
 
 export const Register = () => {
   useRedirect('/');
-
- 
-
   const { handleSubmit, handleChange, values, touched, errors, handleBlur } =
     useFormik({
       initialValues: initialValuesRegister,
@@ -31,7 +28,7 @@ export const Register = () => {
   return (
     <AuthLayout bg='register'>
       <FormStyled onSubmit={handleSubmit}>
-        <h1>Register</h1>
+        <h1>Registro</h1>
         <FormContentWrapper>
           <div>
             <label> Email </label>
@@ -49,7 +46,7 @@ export const Register = () => {
           </div>
 
           <div>
-            <label> Name </label>
+            <label> Nombre </label>
             <InputStyled
               error={errors.displayName && touched.displayName ? true : false}
               type='text'
@@ -64,7 +61,7 @@ export const Register = () => {
             )}
           </div>
           <div>
-            <label> Password </label>
+            <label> Contraseña </label>
 
             <InputStyled
               error={errors.password && touched.password ? true : false}
@@ -81,7 +78,7 @@ export const Register = () => {
           </div>
         </FormContentWrapper>
         <FormButtonWrapper>
-          <SubmitButton type='submit'>Submit</SubmitButton>
+          <SubmitButton type='submit'>Crear</SubmitButton>
           <SubmitButton type='button' onClick={singInWithGoogle}>
             <AiFillGoogleCircle size='1.5rem'></AiFillGoogleCircle>
             Google

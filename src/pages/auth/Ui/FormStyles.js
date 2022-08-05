@@ -69,7 +69,7 @@ export const FormButtonWrapper = styled.div`
 export const SubmitButton = styled.button`
   min-width: 90px;
   font-size: 1rem;
-  height: auto;
+  height: 35px;
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;

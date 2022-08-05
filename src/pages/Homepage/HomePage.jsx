@@ -14,8 +14,8 @@ const HomePage = () => {
       <Hero />
       <Categories />
       <ProductsHome title={'Mas Vendidos'} data={bestSellersProducts} />
-      <ProductsHome title={'Recomendados'} data={reccomendedProducts} />
-      <Footer />
+      <ProductsHome title={'Nuevos Lanzamientos'} data={reccomendedProducts} />
+     
     </>
   );
 };

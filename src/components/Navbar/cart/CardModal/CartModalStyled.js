@@ -98,8 +98,8 @@ export const CartModalBody = styled.div`
 
 export const ClearCartBtn = styled.button`
   position: absolute;
-  top: 0;
-  right: 4px;
+  top: 7px;
+  right: 2px;
   width: 2rem;
   height: 2rem;
   border: none;

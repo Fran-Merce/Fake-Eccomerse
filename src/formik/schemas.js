@@ -4,25 +4,25 @@ import { errorMessages } from './errorMessages';
 const { required, numberError, stringError } = errorMessages;
 
 export const validationSchemaRegister = yup.object().shape({
-  email: yup.string().email().required('Required'),
+  email: yup.string().email().required(required),
   password: yup.string().required().min(6, 'password must be at least 6 characters'),
   displayName: yup
     .string()
-    .required('Required')
+    .required(required)
     .min(1, 'El nombre debe tener al menos 1 caracter')
     .max(20, 'El nombre debe tener como maximo 20 caracteres'),
 });
 
 export const validationSchemaLogin = yup.object().shape({
-  email: yup.string().email().required('Required'),
+  email: yup.string().email().required(required),
   password: yup
     .string()
-    .required('Required')
+    .required(required)
     .min(6, 'la contraseña debe tener al menos 6 caracteres'),
 });
 
 export const validationSchemaForgotPassword = yup.object().shape({
-  email: yup.string().email().required('Required'),
+  email: yup.string().email().required(required),
 });
 
 export const validationSchemaPayInfo = yup.object().shape({

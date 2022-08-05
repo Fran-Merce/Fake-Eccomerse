@@ -1,5 +1,6 @@
 import { AuthLayout } from '../Layout/AuthLayout';
 import {
+  FormButtonWrapper,
   FormContentWrapper,
   FormErrorStyled,
   FormStyled,
@@ -13,6 +14,8 @@ import { Link } from 'react-router-dom';
 import { useRedirect } from '../../../hooks/useRedirect';
 import { initialValuesLogin } from '../../../formik/initialValues';
 import { handleSubmitFormLogin } from '../helpers/loginHandleSubmit';
+import { singInWithGoogle } from '../../../firebase/firebase-utils';
+import { AiFillGoogleCircle } from 'react-icons/ai';
 
 const LoginPage = () => {
   useRedirect('/');
@@ -26,7 +29,7 @@ const LoginPage = () => {
   return (
     <AuthLayout bg='login'>
       <FormStyled onSubmit={handleSubmit}>
-        <h1>Login</h1>
+        <h1>Inciar Sesion</h1>
         <FormContentWrapper>
           <div>
             <label> Email </label>
@@ -43,7 +46,7 @@ const LoginPage = () => {
           </div>
 
           <div>
-            <label> Password </label>
+            <label> Contraseña </label>
             <InputStyled
               error={errors.password && touched.password ? true : false}
               type='password'
@@ -58,11 +61,19 @@ const LoginPage = () => {
             )}
           </div>
         </FormContentWrapper>
-        <SubmitButton type='submit'>Login</SubmitButton>
-        <div>
-          <Link to='/auth/register'>no tenes cuenta?</Link>
+
+      
+        <FormButtonWrapper>
+          <SubmitButton type='submit'>Iniciar</SubmitButton>
+          <SubmitButton type='button' onClick={singInWithGoogle}>
+            <AiFillGoogleCircle size='1.5rem' />
+            Google
+          </SubmitButton>
+        </FormButtonWrapper>
+        <FormButtonWrapper>
+          <Link to='/auth/register'>No tenes cuenta?</Link>
           <Link to='/auth/reset-password'>Olvidaste tu contraseña?</Link>
-        </div>
+        </FormButtonWrapper>
       </FormStyled>
     </AuthLayout>
   );

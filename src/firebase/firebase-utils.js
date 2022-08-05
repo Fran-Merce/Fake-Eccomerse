@@ -11,6 +11,7 @@ import {
 } from 'firebase/auth';
 import { doc, getDoc, setDoc, getFirestore } from 'firebase/firestore';
 import Swal from 'sweetalert2';
+import { swalModalAuth } from '../helpers/swal/swal';
 import {
   actionCodeSettingPasswordReset,
   actionCodeSettingVerification,
@@ -62,8 +63,6 @@ export const singInUser = ({ email, password }) =>
 export const resetPassword = async email => {
   await sendPasswordResetEmail(auth, email, actionCodeSettingPasswordReset);
   Swal.fire(
-    'Email',
-    `Mensaje de recuperación de contraseña enviado al mail ${email} `,
-    'success'
+   swalModalAuth('Email', `Mensaje de verificación enviado al mail ${email} `, 'success')
   );
 };

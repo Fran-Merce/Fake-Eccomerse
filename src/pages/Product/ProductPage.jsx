@@ -1,6 +1,5 @@
 import { AnimatePresence } from 'framer-motion';
 import { useParams } from 'react-router-dom';
-import { ProductCard } from '../../components/ProductCard/ProductCard';
 import { products } from '../../data/products';
 import { NotFoundPage } from '../NotFound/NotFoundPage';
 import { ProductInfo } from './components/ProductInfo/ProductInfo';
@@ -10,7 +9,7 @@ const ProductPage = () => {
   const { id } = useParams();
   const productsFormatted = Object.values(products).flat();
   const product = productsFormatted.find(product => product.id === parseInt(id));
-
+  console.log(product);
   if (!product) return <NotFoundPage />;
   const { images } = product;
 

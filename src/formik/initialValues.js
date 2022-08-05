@@ -13,7 +13,7 @@ export const initialValuesLogin = {
   password: '',
 };
 export const initialValuesRegister = {
-  email: 'franmerce1@gmail.com',
-  password: '412412asflg;fsa',
-  displayName: 'fsafokaskofaosk',
+  email: '',
+  password: '',
+  displayName: '',
 };

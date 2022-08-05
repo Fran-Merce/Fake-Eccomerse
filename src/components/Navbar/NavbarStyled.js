@@ -56,13 +56,12 @@ export const CartIconWrapper = styled.button`
   transition: all 0.3s ease-in-out;
   & > p {
     position: absolute;
-    top: -3px;
-    right: -3px;
+    top: -5px;
+    right: -5px;
     font-size: 0.9rem;
     color: var(--secondary-text);
   }
   &:hover {
-    background-color: #ddd;
-
+    background-color: rgba(255, 255, 255, 0.5);
   }
 `;

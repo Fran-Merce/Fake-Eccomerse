@@ -1,27 +1,53 @@
 import React from 'react';
+import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom';
 import { resetPassword } from '../../../firebase/firebase-utils';
 import { useRedirect } from '../../../hooks/useRedirect';
 import { AuthLayout } from '../Layout/AuthLayout';
-import { FormStyled } from '../Ui/FormStyles';
+import {
+  FormButtonWrapper,
+  FormContentWrapper,
+  FormErrorStyled,
+  FormStyled,
+  InputStyled,
+  SubmitButton,
+} from '../Ui/FormStyles';
+import { validationSchemaForgotPassword } from '../../../formik/schemas';
 const ForgotPassword = () => {
   const navigate = useNavigate();
   useRedirect('/home');
 
+  const { handleSubmit, handleChange, touched, errors } = useFormik({
+    initialValues: { email: '' },
+    validationSchema: validationSchemaForgotPassword,
+    onSubmit: values => resetPassword(values.email),
+  });
+
   return (
     <AuthLayout bg={'register'}>
-      <FormStyled>
-        <h1>Forgot Password</h1>
-        <div>
-          <label> Email </label>
-          <input type='email' />
-        </div>
-        <button  type='button' onClick={() => navigate('/auth/login')}>
-          VOLVER
-        </button>
-        <button type='button' onClick={(e)=> resetPassword('franmerce1@gmail.com')}>
-          ENVIAR
-        </button>
+      <FormStyled onSubmit={handleSubmit}>
+        <h1>Restablecer</h1>
+        <FormContentWrapper>
+          <div>
+            <label> Email </label>
+            <InputStyled
+              onChange={handleChange}
+              type='email'
+              name='email'
+              error={errors.email && touched.email}
+              placeholder='tuemail@gmail.com'
+            />
+            {errors.email && touched.email && (
+              <FormErrorStyled>{errors.email}</FormErrorStyled>
+            )}
+          </div>
+        </FormContentWrapper>
+        <FormButtonWrapper>
+          <SubmitButton type='button' onClick={() => navigate('/auth/login')}>
+            Volver
+          </SubmitButton>
+          <SubmitButton type='submit'>Enviar</SubmitButton>
+        </FormButtonWrapper>
       </FormStyled>
     </AuthLayout>
   );
