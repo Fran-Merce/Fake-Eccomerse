@@ -13,7 +13,7 @@ export const CheckoutBtn = ({ handleOnClick, children, type = 'button' }) => {
     >
       {children}
       <span>
-        Alla voy <img src='./assets/imgs/creditcard.gif' alt='' />
+        Alla voy <img src='/assets/imgs/creditcard.gif' alt='' />
       </span>
     </CheckoutBtnStyled>
   );

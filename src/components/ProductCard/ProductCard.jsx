@@ -1,4 +1,4 @@
-import { AnimatePresence } from 'framer-motion';
+
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -13,9 +13,9 @@ import {
   ProductContentWrapper,
   ProductQuantity,
 } from './ProductCardStyles';
-// import img from '../../assets/imgs/product1.png';
+
 export const ProductCard = ({ product } = {}) => {
-  const { id, price, name, image, category, description } = product;
+  const { id, price, name, image, description } = product;
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const hadleNavigate = () => {

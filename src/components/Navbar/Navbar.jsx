@@ -24,7 +24,7 @@ export const Navbar = () => {
   return (
     <NavbarWrapperStyled>
       <LinkStyled to='/'>
-        <LogoStyled src={'./assets/imgs/logo.svg'} />
+        <LogoStyled src={'/assets/imgs/logo.svg'} />
       </LinkStyled>
       <LinksWrapperStyled>
         <LinkStyled to='/'>Home</LinkStyled>

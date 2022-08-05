@@ -5,7 +5,7 @@ const productsData = [
     id: 1,
     name: 'Product 1',
     price: '100',
-    image: './assets/imgs/Product1.png',
+    image: '/assets/imgs/Product1.png',
     category: 'teclados',
     warranty: '12 meses',
     brand: 'Logitech',
@@ -36,7 +36,7 @@ const productsData = [
     id: 2,
     name: 'Product 2',
     price: '200',
-   image: './assets/imgs/Product1.png',
+   image: '/assets/imgs/Product1.png',
     brand: 'teton',
     category: 'teclados',
     images: [
@@ -66,7 +66,7 @@ const productsData = [
     id: 3,
     name: 'Product 3',
     price: '200',
-   image: './assets/imgs/Product1.png',
+   image: '/assets/imgs/Product1.png',
     brand: 'teton',
     category: 'teclados',
     images: [
@@ -96,7 +96,7 @@ const productsData = [
     id: 4,
     name: 'Product 4',
     price: '400',
-   image: './assets/imgs/Product1.png',
+   image: '/assets/imgs/Product1.png',
     brand: 'Razer',
     category: 'teclados',
     images: [
@@ -126,7 +126,7 @@ const productsData = [
     id: 5,
     name: 'Product 5',
     price: '200',
-   image: './assets/imgs/Product1.png',
+   image: '/assets/imgs/Product1.png',
     brand: 'Razer',
     category: 'monitoreses',
     images: [
@@ -156,7 +156,7 @@ const productsData = [
     id: 6,
     name: 'Product 6',
     price: '200',
-   image: './assets/imgs/Product1.png',
+   image: '/assets/imgs/Product1.png',
     brand: 'Razer',
     category: 'monitoreses',
     images: [
@@ -186,7 +186,7 @@ const productsData = [
     id: 7,
     name: 'Product 7',
     price: '200',
-   image: './assets/imgs/Product1.png',
+   image: '/assets/imgs/Product1.png',
     brand: 'Logitech',
     category: 'monitoreses',
     images: [
@@ -216,7 +216,7 @@ const productsData = [
     id: 8,
     name: 'Product 8',
     price: '200',
-   image: './assets/imgs/Product1.png',
+   image: '/assets/imgs/Product1.png',
     brand: 'Logitech',
     category: 'Mouses',
     images: [
@@ -246,7 +246,7 @@ const productsData = [
     id: 9,
     name: 'Product 9',
     price: '200',
-   image: './assets/imgs/Product1.png',
+   image: '/assets/imgs/Product1.png',
     brand: 'Logitech',
     category: 'Mouses',
     images: [
@@ -276,7 +276,7 @@ const productsData = [
     id: 10,
     name: 'Product 10',
     price: '200',
-   image: './assets/imgs/Product1.png',
+   image: '/assets/imgs/Product1.png',
     brand: 'Logitech',
     category: 'Mouses',
     images: [
@@ -306,7 +306,7 @@ const productsData = [
     id: 11,
     name: 'Product 11',
     price: '200',
-   image: './assets/imgs/Product1.png',
+   image: '/assets/imgs/Product1.png',
     brand: 'Logitech',
     category: 'teclados',
     images: [
@@ -336,7 +336,7 @@ const productsData = [
     id: 12,
     name: 'Product 12',
     price: '200',
-   image: './assets/imgs/Product1.png',
+   image: '/assets/imgs/Product1.png',
     brand: 'Logitech',
     category: 'monitores',
     images: [
@@ -366,7 +366,7 @@ const productsData = [
     id: 13,
     name: 'Product 13',
     price: '200',
-   image: './assets/imgs/Product1.png',
+   image: '/assets/imgs/Product1.png',
     brand: 'Logitech',
     category: 'Mouses',
     images: [
@@ -396,7 +396,7 @@ const productsData = [
     id: 14,
     name: 'Product 14',
     price: '200',
-   image: './assets/imgs/Product1.png',
+   image: '/assets/imgs/Product1.png',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, se lorem lorem lorem',
     category: 'teclados',
@@ -429,7 +429,7 @@ const productsData = [
     id: 15,
     name: 'Product 15',
     price: '200',
-   image: './assets/imgs/Product1.png',
+   image: '/assets/imgs/Product1.png',
     brand: 'Logitech',
     category: 'monitores',
     images: [
@@ -459,7 +459,7 @@ const productsData = [
     id: 16,
     name: 'Product 16',
     price: '200',
-   image: './assets/imgs/Product1.png',
+   image: '/assets/imgs/Product1.png',
     brand: 'Logitech',
     category: 'Mouses',
     images: [

@@ -7,7 +7,7 @@ export const categoriesData = [
   {
     id: 2,
     name: 'teclados',
-    image: './assets/imgs/product1.png',
+    image: '/assets/imgs/product1.png',
   },
   {
     name: 'mouses',

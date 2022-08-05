@@ -5,7 +5,7 @@ export const reccomendedProducts = [
     id: 11,
     name: 'Product 11',
     price: '200',
-    image: './assets/imgs/product1.png',
+    image: '/assets/imgs/product1.png',
     warranty: '12 meses',
     brand: 'razer',
     description:
@@ -38,7 +38,7 @@ export const reccomendedProducts = [
     id: 12,
     name: 'Product 12',
     price: '200',
-    image: './assets/imgs/product1.png',
+    image: '/assets/imgs/product1.png',
     warranty: '6 meses',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, se lorem lorem lorem',
@@ -72,7 +72,7 @@ export const reccomendedProducts = [
     name: 'Product 13',
     price: '200',
     warranty: '12 meses',
-    image: './assets/imgs/product1.png',
+    image: '/assets/imgs/product1.png',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, se lorem lorem lorem',
     category: 'Mouses',
