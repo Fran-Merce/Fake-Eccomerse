@@ -20,6 +20,7 @@ import {
 import { useRedirect } from '../../../hooks/useRedirect';
 
 const LoginPage = () => {
+  useRedirect('/');
   const initialValues = {
     email: '',
     password: '',
@@ -29,7 +30,6 @@ const LoginPage = () => {
     try {
       const { user } = await singInUser({ ...values });
       createUserProfileDocument(user);
-      
     } catch (error) {
       console.log(error);
       if (error.code === 'auth/user-not-found') {
@@ -49,7 +49,7 @@ const LoginPage = () => {
       validationSchema: validationSchemaLogin,
       onSubmit: handleSubmitForm,
     });
-  useRedirect('/');
+
   return (
     <AuthLayout bg='login'>
       <FormStyled onSubmit={handleSubmit}>
@@ -88,7 +88,10 @@ const LoginPage = () => {
           </div>
         </FormContentWrapper>
         <SubmitButton type='submit'>Login</SubmitButton>
-        <Link to='/auth/register'>no tenes cuenta?</Link>
+      <div>
+      <Link to='/auth/register'>no tenes cuenta?</Link>
+      <Link to='/auth/reset-password'>Olvidaste tu contraseña?</Link>
+      </div>
       </FormStyled>
     </AuthLayout>
   );

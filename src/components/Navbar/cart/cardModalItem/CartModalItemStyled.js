@@ -3,6 +3,7 @@ import { mediaQueries } from '../../../../styles/mediaQueries';
 
 export const CartModalItemStyled = styled.div`
   width: 90%;
+  max-width: 450px;
   height: 70px;
   display: flex;
   align-items: center;

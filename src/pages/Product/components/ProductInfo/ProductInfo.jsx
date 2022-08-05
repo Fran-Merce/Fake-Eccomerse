@@ -42,7 +42,9 @@ export const ProductInfo = ({ product }) => {
             <p key={index}>{detail}</p>
           ))}
         </ProductInfoContent>
+        
         <hr />
+
         <ProductInfoContent color={'#3fff50'}>
           <ProductInfoText>
             <BsShieldCheck /> Garantia <span>{warranty}</span>

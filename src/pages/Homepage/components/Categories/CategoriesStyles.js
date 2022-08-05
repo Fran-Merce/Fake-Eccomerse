@@ -22,7 +22,7 @@ export const CategoriesWrapper = styled.div`
 `;
 
 export const CategorieCard = styled.div`
-text-transform: capitalize;
+  text-transform: capitalize;
   width: 100%;
   height: 25rem;
   color: #fff;
@@ -36,9 +36,19 @@ text-transform: capitalize;
   gap: 1rem;
   cursor: pointer;
 
-  & img {
+  & > div {
+ 
     width: 80%;
-    object-fit: cover;
+    /* display: flex */
+    & > img {
+      display: block;
+      margin: 0 auto;
+      width: 80%;
+      height: auto;
+      /* height: 80%; */
+      object-fit: cover;
+      
+    }
   }
   & h3 {
     font-size: 2rem;

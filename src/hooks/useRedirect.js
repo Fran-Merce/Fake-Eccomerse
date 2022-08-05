@@ -1,12 +1,11 @@
 import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { useRedux, useReduxTypes } from './useRedux';
-
 
 export const useRedirect = redirectTo => {
   const navigate = useNavigate();
-  const { state: { currentUser} } = useRedux(useReduxTypes.auth,false);
-  
+  const { currentUser } = useSelector(state => state.auth);
+
   useEffect(() => {
     if (currentUser) {
       navigate(redirectTo);

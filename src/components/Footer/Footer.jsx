@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../assets/imgs/logo.svg';
+
 import { FooterContent, FooterStyled, SocialMediaWrapper } from './FooterStyles';
 import {
   AiOutlineInstagram,

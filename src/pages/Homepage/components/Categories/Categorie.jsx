@@ -17,7 +17,9 @@ export const Categorie = ({ name, image, id }) => {
       onClick={handleRedirect}
       color={id === 2 ? '--soft-black' : '--black'}
     >
+      <div>
       <img src={image} alt='' />
+      </div>
       <h3>{name}</h3>
     </CategorieCard>
   );

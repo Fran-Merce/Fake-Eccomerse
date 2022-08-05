@@ -5,41 +5,46 @@ import {
   DropDownWrapper,
 } from './DropDownStyled';
 
-import { useRedux, useReduxTypes } from '../../../../../hooks/useRedux';
-import { removeCategoryAction, setCategoryAction } from '../../../../../redux/filter//filterActions';
+import { useSelector, useDispatch } from 'react-redux';
+import {
+  removeCategoryAction,
+  setCategoryAction,
+} from '../../../../../redux/filter//filterActions';
 import { categoriesData } from '../../../../../data/categories';
 
 export const DropDown = () => {
-  const { state, dispatch } = useRedux(useReduxTypes.filter);
-  const { categorySelected, dataFiltered } = state;
-  const [selected, setSelected] = useState(categorySelected ? categorySelected : null);
+  const { categorySelected } = useSelector(state => state.filter);
+  const dispatch = useDispatch();
+  const [selected, setSelected] = useState(
+    categorySelected 
+    ? categorySelected 
+    : null
+  );
 
   const handleSelect = option => {
-    if(option === selected){
+    if (option === selected) {
       dispatch(removeCategoryAction());
       setSelected(null);
-      return
-    } 
+      return;
+    }
     setSelected(option);
     dispatch(setCategoryAction(option));
   };
 
   return (
-    
-      <DropDownWrapper>
-        <p>Categorias</p>
-        <DropDownOptionsWrapper>
-          {categoriesData.map(({ name }) => (
-            <DropDownOptionStyled
-              selected={selected === name && selected}
-              key={name}
-              onClick={() => handleSelect(name)}
-            >
-              {name}
-            </DropDownOptionStyled>
-          ))}
-        </DropDownOptionsWrapper>
-      </DropDownWrapper>
-
+    <DropDownWrapper>
+      <p>Categorias</p>
+      <DropDownOptionsWrapper>
+        {categoriesData.map(({ name }) => (
+          <DropDownOptionStyled
+            selected={selected === name && selected}
+            key={name}
+            onClick={() => handleSelect(name)}
+          >
+            {name}
+          </DropDownOptionStyled>
+        ))}
+      </DropDownOptionsWrapper>
+    </DropDownWrapper>
   );
 };

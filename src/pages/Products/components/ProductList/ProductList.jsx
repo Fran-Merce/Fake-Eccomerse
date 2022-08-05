@@ -2,7 +2,7 @@ import { AnimatePresence } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { ProductCard } from '../../../../components/ProductCard/ProductCard';
-import { PrimaryButton } from '../../../../components/UI/PrimaryButton/PrimaryButton';
+import { PrimaryButton } from '../../../../components/UI/Buttons/PrimaryButton'
 import { ProductListStyled, ProductListWrapper } from './ProductListStyled';
 export const ProductList = () => {
   const { dataFiltered } = useSelector(state => state.filter);

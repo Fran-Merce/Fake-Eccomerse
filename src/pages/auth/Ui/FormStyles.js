@@ -28,19 +28,28 @@ export const FormContentWrapper = styled.div`
 export const FormStyled = styled.form`
   color: #fff;
   width: 450px;
-  height: 70%;
+  min-height: 70%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   backdrop-filter: blur(3px);
   gap: 3rem;
+  padding: 2rem;
   background-color: rgba(0, 0, 0, 0.7);
   font-family: 'Signika', sans-serif;
   h1 {
     font-size: 2.5rem;
     font-family: monospace;
     letter-spacing: 3px;
+  }
+
+  @media (${mediaQueries.desktop}) {
+    max-height: 600px;
+    min-height: 600px;
+  }
+  a {
+    color: #fff;
   }
 `;
 

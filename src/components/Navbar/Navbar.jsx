@@ -14,19 +14,17 @@ import { CartModal } from './cart/CardModal/CartModal';
 import { useDispatch } from 'react-redux';
 import { AnimatePresence } from 'framer-motion';
 import { auth } from '../../firebase/firebase-utils';
+
 export const Navbar = () => {
   const { hidden, cart } = useSelector(state => state.cart);
   const { currentUser } = useSelector(state => state.auth);
   const dispatch = useDispatch();
-  const cartItems = cart.map(item => item.quantity);
-
-  const logOut = () => {
-    auth.signOut();
-  };
+  const logOut = () => auth.signOut()
+  const cartItems = cart.reduce((acc, curr) => acc + curr.quantity, 0);
   return (
     <NavbarWrapperStyled>
       <LinkStyled to='/'>
-        <LogoStyled src={'/src/assets/imgs/logo.svg'} />
+        <LogoStyled src={'./assets/imgs/logo.svg'} />
       </LinkStyled>
       <LinksWrapperStyled>
         <LinkStyled to='/'>Home</LinkStyled>
@@ -37,7 +35,7 @@ export const Navbar = () => {
           <LinkStyled to='/auth/login'>Login</LinkStyled>
         )}
         <CartIconWrapper onClick={() => dispatch({ type: TYPES.HADLE_TOGGLE_CART })}>
-          <p>{cartItems.length === 0 ? 0 : cartItems}</p>
+          <p>{cartItems}</p>
           <HiShoppingCart size='1.3rem' color='white' />
         </CartIconWrapper>
       </LinksWrapperStyled>

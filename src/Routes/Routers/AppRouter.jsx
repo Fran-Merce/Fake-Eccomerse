@@ -22,10 +22,11 @@ const AppRouter = () => {
         <Route
           path='/checkout'
           element={
-            <ProtectedRoutes redirectTo='/auth/register'>
+            // <ProtectedRoutes redirectTo='/auth/register'>
               <CheckoutPage />
-            </ProtectedRoutes>
+            // </ProtectedRoutes>
           }
+          
         />
         <Route path='*' element={<NotFoundPage />} />
       </Routes>

@@ -22,7 +22,7 @@ export const LinksWrapperStyled = styled.div`
 export const LinkStyled = styled(Link)`
   font-size: 1.1rem;
   font-weight: 300;
-
+  color: #dedede;
   &:hover {
     color: #dedede;
   }
@@ -52,11 +52,17 @@ export const CartIconWrapper = styled.button`
   justify-content: center;
   cursor: pointer;
   background:none;
+  border: none ;
+  transition: all 0.3s ease-in-out;
   & > p {
     position: absolute;
     top: -3px;
     right: -3px;
     font-size: 0.9rem;
     color: var(--secondary-text);
+  }
+  &:hover {
+    background-color: #ddd;
+
   }
 `;

@@ -3,12 +3,14 @@ import { mediaQueries } from '../../../../styles/mediaQueries';
 
 export const ProductGalleryWrapper = styled.div`
   width: 100%;
+  max-width: 1400px;
   display: flex;
   flex-direction: column;
   align-items: center;
   @media (${mediaQueries.tablet}) {
     width: 40%;
   }
+
 `;
 export const PrimaryImageWrapper = styled.div`
   width: 320px;

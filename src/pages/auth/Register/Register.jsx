@@ -24,14 +24,12 @@ export const Register = () => {
   useRedirect('/');
 
   const handleSubmitForm = async (values, actions) => {
-    console.log(values);
     try {
       await createUser({ ...values });
     } catch (error) {
       if (error.code === 'auth/email-already-in-use')
-        Swal.fire('Error', error.code, 'error');
+        Swal.fire('Error','El Email Ingresado ya esta registrado' , 'error');
     }
-
     actions.resetForm();
   };
 

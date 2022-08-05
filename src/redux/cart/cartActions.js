@@ -19,3 +19,9 @@ export const handleCartToggleAction = () => {
     type: TYPES.HADLE_TOGGLE_CART,
   };
 };
+
+export const clearCartAction = () => {
+  return {
+    type: TYPES.CLEAR_CART,
+  };
+}

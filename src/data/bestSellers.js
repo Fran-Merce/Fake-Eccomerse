@@ -1,11 +1,9 @@
-import img from '../assets/imgs/product1.png';
-
 export const bestSellersProducts = [
   {
     id: 14,
     name: 'Product 14',
     price: '200',
-    image: img,
+    image: './assets/imgs/product1.png',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, se lorem lorem lorem',
     category: 'Teclado',
@@ -38,7 +36,7 @@ export const bestSellersProducts = [
     id: 15,
     name: 'Product 15',
     price: '200',
-    image: img,
+    image: './assets/imgs/product1.png',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, se lorem lorem lorem',
     category: 'Monitor',
@@ -71,7 +69,7 @@ export const bestSellersProducts = [
     id: 16,
     name: 'Product 16',
     price: '200',
-    image: img,
+    image: './assets/imgs/product1.png',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, se lorem lorem lorem',
     category: 'Mouses',
@@ -82,7 +80,7 @@ export const bestSellersProducts = [
         url: 'https://cdn.shopify.com/s/files/1/0564/3612/9997/products/hyperx_alloy_origins_65_english_us_aqua_1_top_down_300x.jpg?v=1655760987',
       },
       {
-        url: 'https://cdn.shopify.com/s/files/1/0564/3612/9997/products/hyperx_alloy_origins_65_english_us_aqua_2_angled_left_300x.jpg?v=1655760987',
+        url: 'https://cdn.shopify.com/s/files/1/  0564/3612/9997/products/hyperx_alloy_origins_65_english_us_aqua_2_angled_left_300x.jpg?v=1655760987',
       },
       {
         url: 'https://cdn.shopify.com/s/files/1/0564/3612/9997/products/hyperx_alloy_origins_65_english_us_aqua_1_top_down_300x.jpg?v=1655760987',

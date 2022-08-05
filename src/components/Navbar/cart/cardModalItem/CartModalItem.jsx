@@ -16,7 +16,7 @@ import {
 export const CartModalItem = ({ product }) => {
   const { name, price, quantity, id, image } = product;
   const dispatch = useDispatch();
-
+  
   return (
     <CartModalItemStyled>
       <div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { PrimaryButton } from '../PrimaryButton/PrimaryButton';
+
 import {
   SubscribeButton,
   SubscribeInput,

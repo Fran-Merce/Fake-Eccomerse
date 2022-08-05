@@ -11,12 +11,16 @@ import {
 } from 'firebase/auth';
 import { doc, getDoc, setDoc, getFirestore } from 'firebase/firestore';
 import Swal from 'sweetalert2';
-import { actionCodeSettingPasswordReset, actionCodeSettingVerification, firebaseConfig } from './firebase-config';
+import {
+  actionCodeSettingPasswordReset,
+  actionCodeSettingVerification,
+  firebaseConfig,
+} from './firebase-config';
 
 const firebaseApp = initializeApp(firebaseConfig);
 const provider = new GoogleAuthProvider();
 export const auth = getAuth();
-auth.useDeviceLanguage()
+auth.useDeviceLanguage();
 export const firestore = getFirestore(firebaseApp);
 
 export const createUserProfileDocument = async userAuth => {
@@ -47,10 +51,8 @@ export const singInWithGoogle = () => signInWithPopup(auth, provider);
 export const createUser = async ({ email, password, displayName }) => {
   const res = await createUserWithEmailAndPassword(auth, email, password);
   await sendEmailVerification(res.user, actionCodeSettingVerification);
-  // update user firebase profile displayname
   await updateProfile(res.user, { displayName });
-  console.log(  await updateProfile(res.user, { displayName }))
-
+  console.log(await updateProfile(res.user, { displayName }));
   Swal.fire('Email', `Mensaje de verificación enviado al mail ${email} `, 'success');
 };
 
@@ -59,5 +61,9 @@ export const singInUser = ({ email, password }) =>
 
 export const resetPassword = async email => {
   await sendPasswordResetEmail(auth, email, actionCodeSettingPasswordReset);
-  Swal.fire('Email', `Mensaje de recuperación de contraseña enviado al mail ${email} `, 'success');
-}
+  Swal.fire(
+    'Email',
+    `Mensaje de recuperación de contraseña enviado al mail ${email} `,
+    'success'
+  );
+};
