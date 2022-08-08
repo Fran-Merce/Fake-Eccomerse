@@ -12,7 +12,7 @@ import {
   SubmitButton,
 } from '../Ui/FormStyles';
 import { useRedirect } from '../../../hooks/useRedirect';
-
+import { Link } from 'react-router-dom';
 import { initialValuesRegister } from '../../../formik/initialValues';
 import { handleSubmitFormRegister } from '../helpers/RegisterHandleSubmit';
 
@@ -33,7 +33,7 @@ export const Register = () => {
           <div>
             <label> Email </label>
             <InputStyled
-              error={errors.email && touched.email ? true : false}
+              errors={errors.email && touched.email}
               type='email'
               name='email'
               onChange={handleChange}
@@ -48,7 +48,7 @@ export const Register = () => {
           <div>
             <label> Nombre </label>
             <InputStyled
-              error={errors.displayName && touched.displayName ? true : false}
+              errors={errors.displayName && touched.displayName}
               type='text'
               name='displayName'
               onChange={handleChange}
@@ -64,7 +64,7 @@ export const Register = () => {
             <label> Contraseña </label>
 
             <InputStyled
-              error={errors.password && touched.password ? true : false}
+              errors={errors.password && touched.password}
               type='password'
               name='password'
               onChange={handleChange}
@@ -84,6 +84,7 @@ export const Register = () => {
             Google
           </SubmitButton>
         </FormButtonWrapper>
+        <Link to='/auth/login'>Ya tengo cuenta</Link>
       </FormStyled>
     </AuthLayout>
   );

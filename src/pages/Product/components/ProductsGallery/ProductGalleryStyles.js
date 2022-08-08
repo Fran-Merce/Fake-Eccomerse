@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import { mediaQueries } from '../../../../styles/mediaQueries';
 
@@ -25,21 +26,24 @@ export const PrimaryImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
+  transition: all .3s;
+  &:hover {
+    transform: scale(1.1);
+  }
 `;
 export const SecondaryImagesWrapper = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  @media (${mediaQueries.mobile}) {
-    gap: 10px;
-  }
+  gap :5px;
 `;
 export const SecondaryImageWrapper = styled.div`
-  width: 30%;
+  width: 33%;
   max-height: 100px;
-
+  top: 1rem;
+  gap: 5px;
   &:hover {
     cursor: pointer;
     background-color: rgba(255, 255, 255, 0.1);
@@ -51,7 +55,8 @@ export const SecondaryImageWrapper = styled.div`
   }
   @media (${mediaQueries.mobile}) {
     width: 150px;
-    height: 100px;
+   height: 100px;
+   padding: 10px;
   }
   @media (${mediaQueries.tablet}) {
     min-width: 90px;

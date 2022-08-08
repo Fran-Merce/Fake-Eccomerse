@@ -1,13 +1,13 @@
 export const categoriesData = [
   {
     id: 1,
-    name: 'monitores',
-    image: 'https://redragon.es/content/uploads/2021/06/EMERALD-1.png',
+    name: 'keycaps',
+    image: '/assets/imgs/products/keycap1-1.png',
   },
   {
     id: 2,
-    name: 'teclados',
-    image: '/assets/imgs/product1.png',
+    name: 'teclados custom',
+    image: '/assets/imgs/products/custom3-1.png',
   },
   {
     name: 'mouses',

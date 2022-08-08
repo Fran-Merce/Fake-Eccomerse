@@ -15,22 +15,25 @@ import { formatPrice } from '../../../../helpers/formatPrice';
 import { useDispatch } from 'react-redux';
 import { addProductAction } from '../../../../redux/cart/cartActions';
 import { useNavigate } from 'react-router-dom';
-
+import {toast} from 'react-toastify';
 export const ProductInfo = ({ product }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { name, price, details, warranty, brand } = product;
+  const { name, price, details, warranty} = product;
 
   const handleCheckout = () => {
     dispatch(addProductAction(product));
     navigate('/checkout');
   };
-
+const handleAddProduct = () => {
+  addProductAction(product)
+  toast.success('Producto agregado al carrito');
+}
   return (
     <ProductInfoWrapper>
       <ProductInfoHeader>
         <h1>
-          {brand} {name}
+          {name}
         </h1>
         <h3>{formatPrice(price)}</h3>
       </ProductInfoHeader>
@@ -57,13 +60,12 @@ export const ProductInfo = ({ product }) => {
           </ProductInfoText>
         </ProductInfoContent>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, se lorem lorem
-          lorem
+         Al comprar este producto aceptas las condiciones de compra y venta.
         </p>
       </ProductInfoBody>
       <BtnWrapper>
         <ProductBtn onClick={handleCheckout}>Comprar</ProductBtn>
-        <ProductBtn onClick={() => dispatch(addProductAction(product))}>
+        <ProductBtn onClick={handleAddProduct}>
           Agregar
         </ProductBtn>
       </BtnWrapper>

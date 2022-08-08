@@ -7,6 +7,7 @@ import { ProductsHome } from './components/ProductsHome/ProductsHome';
 
 
 const HomePage = () => {
+ 
   return (
     <>
       <Hero />

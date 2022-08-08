@@ -91,7 +91,7 @@ export const InputStyled = styled.input`
   width: 100%;
   padding: 0.4rem 0.5rem;
   border-radius: 5px;
-  border: 1px solid ${props => props.error && 'red'};
+  border: 1px solid ${props => props.errors ? 'red' : '#fff'};
   background-color: transparent;
   color: #fff;
   font-size: 0.8rem;

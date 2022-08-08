@@ -1,7 +1,7 @@
-
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import { formatPrice } from '../../helpers/formatPrice';
 import { addProductAction } from '../../redux/cart/cartActions';
 import {
@@ -13,39 +13,42 @@ import {
   ProductContentWrapper,
   ProductQuantity,
 } from './ProductCardStyles';
+import { toast } from 'react-toastify';
+export const ProductCard = ({ product, size = '' } = {}) => {
+  const { id, price, name, image, category } = product;
 
-export const ProductCard = ({ product } = {}) => {
-  const { id, price, name, image, description } = product;
-  console.log(image);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const hadleNavigate = () => {
     navigate(`/product/${id}`);
   };
-  return (
-  
-      <ProductCardWrapper
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.3 }}
-      >
-        <ProductCardImgWrapper>
-          <img src={image} alt='' />
-        </ProductCardImgWrapper>
 
-        <ProductContentWrapper>
-          <h3>{name}</h3>
-          <p>{description}</p>
-          <Price>{formatPrice(price)}</Price>
-          <ProductButtonsWrapper>
-            <ProductQuantity onClick={hadleNavigate}>VER</ProductQuantity>
-            <ProductBtn onClick={() => dispatch(addProductAction(product))}>
-              AGREGAR
-            </ProductBtn>
-          </ProductButtonsWrapper>
-        </ProductContentWrapper>
-      </ProductCardWrapper>
-   
+  const handleAddProduct = () => {
+    dispatch(addProductAction(product));
+    toast.success('Producto agregado al carrito');
+  };
+
+  return (
+    <ProductCardWrapper
+      size={size}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3 }}
+    >
+      <ProductCardImgWrapper>
+        <img src={image} alt='' />
+      </ProductCardImgWrapper>
+
+      <ProductContentWrapper>
+        <h3>{name}</h3>
+        <p>Categoria: {category}</p>
+        <Price>{formatPrice(price)}</Price>
+        <ProductButtonsWrapper>
+          <ProductQuantity onClick={hadleNavigate}>VER</ProductQuantity>
+          <ProductBtn onClick={handleAddProduct}>AGREGAR</ProductBtn>
+        </ProductButtonsWrapper>
+      </ProductContentWrapper>
+    </ProductCardWrapper>
   );
 };

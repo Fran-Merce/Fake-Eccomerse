@@ -34,7 +34,7 @@ const LoginPage = () => {
           <div>
             <label> Email </label>
             <InputStyled
-              error={errors.email && touched.email ? true : false}
+              errors={errors.email && touched.email}
               type='email'
               name='email'
               onChange={handleChange}
@@ -48,7 +48,7 @@ const LoginPage = () => {
           <div>
             <label> Contraseña </label>
             <InputStyled
-              error={errors.password && touched.password ? true : false}
+              errors={errors.password && touched.password }
               type='password'
               name='password'
               onChange={handleChange}

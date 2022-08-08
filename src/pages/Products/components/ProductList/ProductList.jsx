@@ -2,7 +2,7 @@ import { AnimatePresence } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { ProductCard } from '../../../../components/ProductCard/ProductCard';
-import { PrimaryButton } from '../../../../components/UI/Buttons/PrimaryButton'
+import { PrimaryButton } from '../../../../components/UI/Buttons/PrimaryButton';
 import { ProductListStyled, ProductListWrapper } from './ProductListStyled';
 export const ProductList = () => {
   const { dataFiltered } = useSelector(state => state.filter);
@@ -15,7 +15,7 @@ export const ProductList = () => {
       ...dataFiltered.slice(prevState.length, prevState.length + 6),
     ]);
   };
-  
+
   useEffect(() => {
     setData(dataFiltered.slice(0, 6));
   }, [dataFiltered]);
@@ -23,7 +23,7 @@ export const ProductList = () => {
   return (
     <ProductListWrapper justifyContent={data.length ? 'space-betweeen' : 'center'}>
       {data.length ? (
-        <ProductListStyled >
+        <ProductListStyled>
           <AnimatePresence>
             {data.map(product => (
               <ProductCard key={product.id} product={product} />
@@ -31,9 +31,13 @@ export const ProductList = () => {
           </AnimatePresence>
         </ProductListStyled>
       ) : (
-        <h2>no products</h2>
+        <ProductListWrapper>
+          <h2>no products</h2>
+        </ProductListWrapper>
       )}
-      {data.length < dataFiltered.length && <PrimaryButton onClick={hadleClick}>Ver mas</PrimaryButton>}
+      {data.length < dataFiltered.length && (
+        <PrimaryButton onClick={hadleClick}>Ver mas</PrimaryButton>
+      )}
     </ProductListWrapper>
   );
 };

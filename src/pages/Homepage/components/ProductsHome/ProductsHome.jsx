@@ -23,7 +23,7 @@ export const ProductsHome = ({ title = '', data = [] }) => {
         <Title>{title}</Title>
         <ProductCardsWrapper>
           {data.map(product => (
-            <ProductCard key={product.id} product={product} />
+            <ProductCard size='xl' key={product.id} product={product} />
           ))}
         </ProductCardsWrapper>
         <Button onClick={() => navigate('/products')}>Ver Todos</Button>

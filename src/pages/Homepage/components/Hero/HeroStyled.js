@@ -6,7 +6,7 @@ export const HeroWrapperStyled = styled.div`
   position: relative;
   width: 100%;
   min-height: calc(95vh - 90px);
-  background-image: url(./assets/imgs/hero.jpg);
+  background-image: url(/assets/imgs/hero.jpg);
   padding: 0 2%;
   background-size: cover;
   display: flex;

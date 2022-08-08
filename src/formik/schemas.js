@@ -1,11 +1,14 @@
 import * as yup from 'yup';
 import { errorMessages } from './errorMessages';
 
-const { required, numberError, stringError } = errorMessages;
+const { required, stringError } = errorMessages;
 
 export const validationSchemaRegister = yup.object().shape({
   email: yup.string().email().required(required),
-  password: yup.string().required().min(6, 'password must be at least 6 characters'),
+  password: yup
+    .string()
+    .required()
+    .min(6, 'La contraseña debe tener al menos 6 caracteres'),
   displayName: yup
     .string()
     .required(required)
@@ -44,7 +47,5 @@ export const validationSchemaPayInfo = yup.object().shape({
     .string()
     .required(required)
     .matches(/^[^0-9]+$/, 'No se pueden ingresar numeros'),
-  address: yup
-    .string()
-    .required(required)
-})
+  address: yup.string().required(required),
+});

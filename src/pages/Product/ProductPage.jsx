@@ -9,10 +9,8 @@ const ProductPage = () => {
   const { id } = useParams();
   const productsFormatted = Object.values(products).flat();
   const product = productsFormatted.find(product => product.id === parseInt(id));
-  console.log(product);
   if (!product) return <NotFoundPage />;
-  const { images } = product;
-
+ 
   return (
     <AnimatePresence>
       <ProductPageStyled
@@ -20,7 +18,7 @@ const ProductPage = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <ProductsGallery images={images} />
+        <ProductsGallery images={product.images} />
         <ProductInfo product={product} />
       </ProductPageStyled>
     </AnimatePresence>

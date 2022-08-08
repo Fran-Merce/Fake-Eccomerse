@@ -34,7 +34,7 @@ const ForgotPassword = () => {
               onChange={handleChange}
               type='email'
               name='email'
-              error={errors.email && touched.email}
+              errors={errors.email && touched.email}
               placeholder='tuemail@gmail.com'
             />
             {errors.email && touched.email && (

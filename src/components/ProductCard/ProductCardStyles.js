@@ -7,17 +7,19 @@ export const ProductCardWrapper = styled(motion.div)`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  /* width: 300px;
+  height: 450px; */
   width: 300px;
-  height: 450px;
+  height: 420px;
   background-color: var(--soft-black);
   border-radius: 3px;
   @media (${mediaQueries.mobile}) {
-    width: 320px;
+    /* width: 320px; */
   }
 `;
 
 export const ProductCardImgWrapper = styled.div`
-  height: 45%;
+  height: 50%;
   width: 100%;
   margin-top: 1rem;
   & img {
@@ -39,7 +41,7 @@ export const ProductButtonsWrapper = styled.div`
 export const ProductContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
-
+  text-transform: capitalize;
   justify-content: center;
   height: 60%;
   padding: 1.4rem;
