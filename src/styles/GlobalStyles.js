@@ -22,10 +22,8 @@ export const GlobalStyles = createGlobalStyle`
 
 *::selection {
   background: #f7c942;
-
 }
 body{
-  /* color:  var(--primary-text); */
   background-color: var(--black);
 }
 

@@ -3,7 +3,6 @@ import './swal.css';
 const swalCustomConfig = {
   dangerMode: true,
   fontFamily: 'Signika',
-
   confirmButtonClass: 'btn btn-primary',
   customClass: {
     title: 'swalTitle',

@@ -35,10 +35,10 @@ export const FormStyled = styled.form`
   flex-direction: column;
   backdrop-filter: blur(5px);
   gap: 3rem;
-padding: 5px;
+  padding: 5px;
   background-color: rgba(0, 0, 0, 0.7);
   font-family: 'Signika', sans-serif;
-  text-align: center;
+
   h1 {
     font-size: 2.5rem;
     font-family: monospace;

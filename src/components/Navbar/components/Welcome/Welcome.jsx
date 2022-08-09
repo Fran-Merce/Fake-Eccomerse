@@ -6,7 +6,6 @@ export const Welcome = () => {
   const nameFormatted = currentUser
     ? currentUser.displayName.split(' ', 1).toString()
     : '';
-
   return (
     <>
       {currentUser && (

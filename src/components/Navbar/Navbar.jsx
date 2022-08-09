@@ -26,7 +26,7 @@ export const Navbar = () => {
         <AnimatePresence>{isPhone && openMobile && <NavLinks />}</AnimatePresence>
         {!isPhone && <NavLinks />}
         <CartIcon />
-        {isPhone && <NavMobileBtn cursor='pointer' setOpen={setOpenMobile} open={openMobile} />}
+        {isPhone && <NavMobileBtn setOpen={setOpenMobile} open={openMobile} />}
       </FlexComponent>
       <AnimatePresence>{hidden === false && <CartModal />}</AnimatePresence>
 

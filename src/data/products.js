@@ -391,7 +391,6 @@ const productsData = [
     id: 14,
     name: 'Keycaps Violet',
     price: '200',
-
     category: 'keycaps',
     image: '/assets/imgs/products/keycap6-1.png',
     images: [

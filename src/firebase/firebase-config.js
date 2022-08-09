@@ -8,7 +8,7 @@ export const firebaseConfig = {
 };
 
 export const actionCodeSettingVerification = {
-  url: 'https://fake-eccomerse.vercel.app',
+  url: 'https://fake-eccomerse.vercel.app/auth/login',
   handleCodeInApp: true,
 };
 
