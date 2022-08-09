@@ -33,11 +33,12 @@ export const FormStyled = styled.form`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(5px);
   gap: 3rem;
   padding: 2rem;
   background-color: rgba(0, 0, 0, 0.7);
   font-family: 'Signika', sans-serif;
+
   h1 {
     font-size: 2.5rem;
     font-family: monospace;
@@ -96,4 +97,8 @@ export const InputStyled = styled.input`
   color: #fff;
   font-size: 0.8rem;
   font-family: 'Poppins', sans-serif;
+  &:focus {
+    outline: none;
+    border: 1px solid ${props => props.errors ? 'red' : '#000'};
+  }
 `;

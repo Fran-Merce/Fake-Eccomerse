@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { mediaQueries } from '../../../../styles/mediaQueries';
-import { AiOutlineArrowDown } from 'react-icons/ai';
 
+import { motion } from 'framer-motion';
 export const HeroWrapperStyled = styled.div`
   position: relative;
   width: 100%;
@@ -13,7 +13,7 @@ export const HeroWrapperStyled = styled.div`
   align-items: center;
   justify-content: space-between;
   background-position: center;
-
+  background-attachment: fixed;
   @media (${mediaQueries.mobile}) {
     padding: 0 5%;
   }
@@ -66,13 +66,16 @@ export const HeroButtonStyled = styled.button`
     color: #000;
   }
 `;
-export const ArrowButtonStyled = styled(AiOutlineArrowDown)`
+export const ArrowButtonStyled = styled(motion.div)`
   position: absolute;
   width: 48px;
   height: 48px;
   right: 0;
   left: 0;
+  display: grid;
+  place-items: center;
   bottom: 1.2rem;
+
   margin: auto;
   color: #fff;
 `;

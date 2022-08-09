@@ -4,6 +4,8 @@ import {
   HeroContentStyled,
   HeroWrapperStyled,
 } from './HeroStyled';
+import { AiOutlineArrowDown } from 'react-icons/ai';
+import { arrowVariants } from './framerMotionVariants';
 export const Hero = () => {
   return (
     <HeroWrapperStyled>
@@ -14,9 +16,11 @@ export const Hero = () => {
           sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet
           consectetur adipisicing elit.
         </p>
-        <HeroButtonStyled>Ver Mas </HeroButtonStyled>
+  
       </HeroContentStyled>
-      <ArrowButtonStyled />
+      <ArrowButtonStyled initial='hidden' animate='show' variants={arrowVariants}>
+        <AiOutlineArrowDown fontSize={'2.3rem'} />
+      </ArrowButtonStyled>
     </HeroWrapperStyled>
   );
 };

@@ -19,7 +19,6 @@ export const ProductListStyled = styled.div`
   }
   @media (${mediaQueries.laptop}) {
     width: 90%;
-
     margin: 0 auto;
   }
  
@@ -27,9 +26,12 @@ export const ProductListStyled = styled.div`
 export const ProductListWrapper = styled.div`
   width: 100%;
   height: 100%;
-  min-height:80vh;
+  margin: 2rem 0;
+  min-height:50vh;
   display: flex;
   align-items: center;
   justify-content: ${props => props.justifyContent || 'center'};
   flex-direction: column;
+  font-family: 'Poppins', sans-serif;
+  color: #FFF;
 `;

@@ -13,7 +13,10 @@ import { FaTrash } from 'react-icons/fa';
 
 import { useNavigate } from 'react-router-dom';
 
-import { clearCartAction, handleCartToggleAction } from '../../../../redux/cart/cartActions';
+import {
+  clearCartAction,
+  handleCartToggleAction,
+} from '../../../../redux/cart/cartActions';
 
 import { PaymentInfoPrice } from '../../../UI/PaymentInfo/PaymentInfoPrice';
 import { CheckoutBtn } from '../../../UI/Buttons/CheckoutBtn/CheckoutBtn';
@@ -37,7 +40,7 @@ export const CartModal = () => {
       <BackBtnStyled
         color='#000'
         size='1.3rem'
-        onClick={() => dispatch({ type: TYPES.HADLE_TOGGLE_CART })}
+        onClick={() => dispatch(handleCartToggleAction())}
         whilehover={{ backgroundColor: 'var(--secondary-text)' }}
       />
 
@@ -53,15 +56,13 @@ export const CartModal = () => {
         </ClearCartBtn>
 
         {!cart.length ? (
-          <p>Carrito Vacio</p>
+          <p>Carrito Vacio 😐</p>
         ) : (
           cart.map(item => <CartModalItem key={item.id} product={item} />)
         )}
       </CartModalBody>
       <PaymentInfoPrice />
-      <CheckoutBtn handleOnClick={handleCheckout}>
-       Ir al Pago
-      </CheckoutBtn>
+      <CheckoutBtn handleOnClick={handleCheckout}>Ir al Pago</CheckoutBtn>
     </CartModalStyled>
   );
 };

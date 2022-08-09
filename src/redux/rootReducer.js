@@ -8,6 +8,7 @@ import { authReducer } from './auth/authReducer';
 
 import { filterReducer } from './filter/filterReducer';
 
+
 const persistConfig = {
   key: 'root',
   storage: storage,

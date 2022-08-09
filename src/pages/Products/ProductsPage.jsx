@@ -1,10 +1,9 @@
 import { useState } from 'react';
-import { DropDown } from './components/FilterSidebar/DropDown/DropDown';
 import { Sidebar } from './components/FilterSidebar/Sidebar';
 import { ProductList } from './components/ProductList/ProductList';
-import { Search } from './components/Search/Search';
 import { ProductsPageStyled } from './ProductsPageStyles';
 import { AnimatePresence } from 'framer-motion';
+import { PrimaryButton } from '../../components/UI/Buttons/PrimaryButton';
 const ProductsPage = () => {
   const [open, setOpen] = useState(false);
   return (
@@ -13,7 +12,7 @@ const ProductsPage = () => {
       <div
         style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}
       >
-        <button onClick={() => setOpen(!open)}>Seleccionar categoria</button>
+        <PrimaryButton onClick={() => setOpen(!open)}> Aplicar Filtros </PrimaryButton>
         <ProductList />
       </div>
     </ProductsPageStyled>

@@ -6,6 +6,8 @@ import { CheckoutProductsWrapper, ProductsWrapper } from './CheckoutProductsStyl
 
 export const CheckoutProducts = () => {
   const { cart } = useSelector(state => state.cart);
+ 
+
   return (
     <CheckoutProductsWrapper>
       <ProductsWrapper>

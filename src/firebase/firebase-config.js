@@ -10,13 +10,13 @@ export const firebaseConfig = {
 export const actionCodeSettingVerification = {
   url:
     process.env.NODE_ENV === 'development'
-      ? 'http://localhost:5173/home'
-      : 'http://localhost:5173',
+      ? 'http://localhost:5173'
+      : 'http://https://fake-eccomerse.vercel.app',
 };
 
 export const actionCodeSettingPasswordReset = {
   url:
     process.env.NODE_ENV === 'development'
       ? 'http://localhost:5173/auth/login'
-      : 'http://localhost:5173',
+      : 'http://https://fake-eccomerse.vercel.app/auth/login',
 }

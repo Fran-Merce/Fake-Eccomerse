@@ -28,11 +28,13 @@ export const PaymentInfo = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { currentUser } = useSelector(state => state.auth);
+  const { cart } = useSelector(state => state.cart);
   const [focused, setFocused] = useState('');
 
   const handleInputFocus = ({ target }) => setFocused(target.name);
 
   const handleSubmitPayment = () => {
+    if (cart.length <= 0) return;
     dispatch(clearCartAction());
     Swal.fire(swalModalCongrats(currentUser?.displayName, currentUser?.email)).then(
       result => {
@@ -40,7 +42,6 @@ export const PaymentInfo = () => {
       }
     );
   };
-
 
   const { handleSubmit, handleChange, values, touched, errors } = useFormik({
     initialValues: initialPayInfoValues,
@@ -104,7 +105,7 @@ export const PaymentInfo = () => {
             )}
           </label>
           <label>
-            CCV
+            CVC
             <InputPayStyled
               type='text'
               name='cvc'

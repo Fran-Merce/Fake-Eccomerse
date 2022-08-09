@@ -9,7 +9,9 @@ import { Footer } from './components/Footer/Footer';
 import { Slide} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 function App() {
+  
   useAuthCheck();
+
   return (
     <AppLayout>
       <Navbar />
@@ -18,7 +20,7 @@ function App() {
       <GlobalStyles />
       <ToastContainer
         position='bottom-right'
-        autoClose={2000}
+        autoClose={1000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick
@@ -28,7 +30,7 @@ function App() {
         pauseOnHover
         theme='dark'
         transition={Slide}
-limit={4}
+        limit={3}
       />
     </AppLayout>
   );

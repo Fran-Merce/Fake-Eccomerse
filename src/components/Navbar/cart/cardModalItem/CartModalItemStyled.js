@@ -13,6 +13,7 @@ export const CartModalItemStyled = styled.div`
   background-color: #fff;
   color: #000;
   font-family: 'Signika', sans-serif;
+  overflow: hidden;
   @media (${mediaQueries.mobile}) {
     justify-content: space-around;
     padding: 1rem;

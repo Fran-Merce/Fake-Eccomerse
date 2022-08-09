@@ -4,7 +4,7 @@ export const PrimaryButton = styled.button`
   margin-top: 3rem;
   border: 1px solid #fff;
   min-width: 130px;
-  padding: 0.5rem 0;
+  padding: 0.5rem;
   background-color: transparent;
   font-size: 1.2rem;
   cursor: pointer;
@@ -13,6 +13,7 @@ export const PrimaryButton = styled.button`
   letter-spacing: 1px;
   color: #fff;
   transition: all 0.3s ease-in-out;
+  
   &:hover {
     background-color: #fff;
     color: #000;

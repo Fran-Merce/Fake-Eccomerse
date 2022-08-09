@@ -32,7 +32,7 @@ export const ProductList = () => {
         </ProductListStyled>
       ) : (
         <ProductListWrapper>
-          <h2>no products</h2>
+          <h2>No hay se encontraon Productos 😐 </h2>
         </ProductListWrapper>
       )}
       {data.length < dataFiltered.length && (

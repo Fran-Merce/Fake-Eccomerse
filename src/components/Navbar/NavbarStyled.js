@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+
 export const NavbarWrapperStyled = styled.nav`
   position: relative;
   width: 100%;
@@ -11,22 +12,12 @@ export const NavbarWrapperStyled = styled.nav`
   justify-content: space-between;
   padding: 0 1rem;
   color: #fff;
+  font-family: 'poppins', sans-serif;
+  text-transform: capitalize;
 `;
 
-export const LinksWrapperStyled = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  font-family: 'poppins', sans-serif;
-`;
-export const LinkStyled = styled(Link)`
-  font-size: 1.1rem;
-  font-weight: 300;
-  color: #dedede;
-  &:hover {
-    color: #dedede;
-  }
-`;
+
+
 export const LogoStyled = styled.img`
   width: 70px;
   height: 70px;
@@ -42,26 +33,4 @@ export const ModalOverlayStyled = styled(motion.div)`
   backdrop-filter: blur(5px);
 `;
 
-export const CartIconWrapper = styled.button`
-  position: relative;
-  width: 2.6rem;
-  height: 2.6rem;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  background:none;
-  border: none ;
-  transition: all 0.3s ease-in-out;
-  & > p {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    font-size: 0.9rem;
-    color: var(--secondary-text);
-  }
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.5);
-  }
-`;
+

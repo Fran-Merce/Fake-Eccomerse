@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { mediaQueries } from '../../styles/mediaQueries';
+
 
 export const AppLayoutWrapper = styled.div`
   position: relative;

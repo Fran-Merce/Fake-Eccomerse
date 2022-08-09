@@ -7,13 +7,19 @@ export const addProductAction = product => {
   };
 };
 
+export const removeOneProductAction = product => {
+  return {
+    type: TYPES.REMOVE_ONE_FROM_CART,
+    payload: product,
+  };
+};
+
 export const removeProductAction = product => {
   return {
     type: TYPES.REMOVE_FROM_CART,
     payload: product,
   };
-};
-
+}
 export const handleCartToggleAction = () => {
   return {
     type: TYPES.HADLE_TOGGLE_CART,
