@@ -8,19 +8,11 @@ export const firebaseConfig = {
 };
 
 export const actionCodeSettingVerification = {
-  url:
-    process.env.NODE_ENV === 'development'
-      ? 'http://localhost:5173'
-      : 'fake-eccomerse.vercel.app',
-      handleCodeInApp: true,
-    
+  url: 'http://https://fake-eccomerse.vercel.app',
+  handleCodeInApp: true,
 };
 
 export const actionCodeSettingPasswordReset = {
-  url:
-    process.env.NODE_ENV === 'development'
-      ? 'http://localhost:5173/auth/login'
-      : 'fake-eccomerse.vercel.app/auth/login',
-      handleCodeInApp: true,
-
-}
+  url: 'http://https://fake-eccomerse.vercel.app/auth/login',
+  handleCodeInApp: true,
+};
