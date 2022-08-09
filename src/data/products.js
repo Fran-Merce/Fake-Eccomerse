@@ -362,7 +362,6 @@ const productsData = [
     id: 13,
     name: 'Product 13',
     price: '200',
-
     category: 'keycaps',
     image: '/assets/imgs/products/keycap5-1.png',
     images: [
@@ -420,62 +419,62 @@ const productsData = [
   },
   {
     id: 15,
-    name: 'Product 15',
-    price: '200',
-    image: './assets/imgs/product1.png',
-    brand: 'Logitech',
-    category: 'monitores',
+    name: 'GTMX Blue ',
+    price: '8750',
+    image: '/assets/imgs/products/switch1-1.png',
+
+    category: 'switches',
     images: [
       {
-        url: 'https://cdn.shopify.com/s/files/1/0564/3612/9997/products/hyperx_alloy_origins_65_english_us_aqua_1_top_down_300x.jpg?v=1655760987',
+        url: '/assets/imgs/products/switch1-1.png',
       },
       {
-        url: 'https://cdn.shopify.com/s/files/1/0564/3612/9997/products/hyperx_alloy_origins_65_english_us_aqua_2_angled_left_300x.jpg?v=1655760987',
+        url: '/assets/imgs/products/switch1-2.png',
       },
       {
-        url: 'https://cdn.shopify.com/s/files/1/0564/3612/9997/products/hyperx_alloy_origins_65_english_us_aqua_1_top_down_300x.jpg?v=1655760987',
+        url: '/assets/imgs/products/switch1-3.png',
       },
       {
-        url: 'https://cdn.shopify.com/s/files/1/0564/3612/9997/products/hyperx_alloy_fps_pro_1_us_main_a0215554-cca4-4ef3-b904-8d0b54585f7a_300x.jpg?v=1655754825',
+        url: '/assets/imgs/products/switch1-4.png',
       },
     ],
     details: {
-      switchType: 'Switches cherry blue',
-      model: 'Modelo G502',
-      weight: 'Peso 0.5 kg',
-      size: 'Teclado 60%',
-      rgb: 'RGB: si',
-      keycaps: 'Keycaps: ksmw',
+      switchType: 'Tactile Blue',
+      model: 'Modelo GTMX 245',
+      durability: 'Durabilidad: 85 millones pulsaciones',
+      force:'Fuerza Inicial: 42gf',
+      compatible:'compatible con: MX-Switches',
+      queantity:'catidad: 128 switches'
     },
   },
   {
     id: 16,
-    name: 'Product 16',
-    price: '200',
-    image: './assets/imgs/product1.png',
-    brand: 'Logitech',
-    category: 'Mouses',
+    name: 'Huano pink',
+    price: '7500',
+    image: '/assets/imgs/products/switch2-1.png',
+    
+    category: 'switches',
     images: [
       {
-        url: 'https://cdn.shopify.com/s/files/1/0564/3612/9997/products/hyperx_alloy_origins_65_english_us_aqua_1_top_down_300x.jpg?v=1655760987',
+        url: '/assets/imgs/products/switch2-1.png',
       },
       {
-        url: 'https://cdn.shopify.com/s/files/1/0564/3612/9997/products/hyperx_alloy_origins_65_english_us_aqua_2_angled_left_300x.jpg?v=1655760987',
+        url: '/assets/imgs/products/switch2-2.png',
       },
       {
-        url: 'https://cdn.shopify.com/s/files/1/0564/3612/9997/products/hyperx_alloy_origins_65_english_us_aqua_1_top_down_300x.jpg?v=1655760987',
+        url: '/assets/imgs/products/switch2-3.png',
       },
       {
-        url: 'https://cdn.shopify.com/s/files/1/0564/3612/9997/products/hyperx_alloy_fps_pro_1_us_main_a0215554-cca4-4ef3-b904-8d0b54585f7a_300x.jpg?v=1655754825',
+        url: '/assets/imgs/products/switch2-4.png',
       },
     ],
     details: {
-      switchType: 'Switches cherry blue',
+      switchType: 'Linear Pink',
       model: 'Modelo G502',
-      weight: 'Peso 0.5 kg',
-      size: 'Teclado 60%',
-      rgb: 'RGB: si',
-      keycaps: 'Keycaps: ksmw',
+      durability: 'Durabilidad: 80 millones pulsaciones',
+      force:'Fuerza Inicial: 45gf',
+      compatible:'compatible con: MX-Switches',
+      queantity:'Cantidad: 128 switches',
     },
   },
 ];

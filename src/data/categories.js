@@ -10,8 +10,8 @@ export const categoriesData = [
     image: '/assets/imgs/products/keycap1-1.png',
   },
   {
-    name: 'mouses',
+    name: 'switches',
     id: 3,
-    image: 'https://redragon.es/content/uploads/2021/06/storm-elite-white.png',
+    image: '/assets/imgs/products/switch1-1.png',
   },
 ];

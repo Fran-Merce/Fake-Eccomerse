@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import Swal from 'sweetalert2';
+
 import { formatPrice } from '../../helpers/formatPrice';
 import { addProductAction } from '../../redux/cart/cartActions';
 import {

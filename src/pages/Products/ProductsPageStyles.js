@@ -1,8 +1,7 @@
 import styled from "styled-components";
-import { mediaQueries } from "../../styles/mediaQueries";
+
 
 export const ProductsPageStyled = styled.div`
-
   width: 100%;
   height: 100%;
   min-height: calc(100vh - 90px);
@@ -10,6 +9,5 @@ export const ProductsPageStyled = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
   gap: 3rem;
 `

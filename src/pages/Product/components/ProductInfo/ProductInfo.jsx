@@ -35,7 +35,7 @@ export const ProductInfo = ({ product }) => {
   return (
     <ProductInfoWrapper>
       <ProductInfoHeader>
-        <h1>{name}</h1>
+        <h1 style={{color:'var(--secondary-text)'}}>{name}</h1>
         <h3>{formatPrice(price)}</h3>
       </ProductInfoHeader>
       <ProductInfoBody>

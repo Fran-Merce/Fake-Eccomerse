@@ -1,16 +1,18 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+
 
 export const NavbarWrapperStyled = styled.nav`
   position: relative;
   width: 100%;
   height: 90px;
+  gap: 10px;
   background-color: #000;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1rem;
+  padding: 0 .5rem;
+  text-align: center;
   color: #fff;
   font-family: 'poppins', sans-serif;
   text-transform: capitalize;
@@ -20,7 +22,7 @@ export const NavbarWrapperStyled = styled.nav`
 
 export const LogoStyled = styled.img`
   width: 70px;
-  height: 70px;
+  height: 64px;
 `;
 export const ModalOverlayStyled = styled(motion.div)`
   position: fixed;

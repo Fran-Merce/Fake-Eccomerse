@@ -1,37 +1,20 @@
-import { Navbar } from './components/Navbar/Navbar';
-import { ToastContainer } from 'react-toastify';
+
 import { GlobalStyles } from './styles/GlobalStyles';
 import { AppLayout } from './components/Layout/AppLayout';
 
 import { useAuthCheck } from './hooks/useCheckAuth';
 import AppRouter from './Routes/Routers/AppRouter';
-import { Footer } from './components/Footer/Footer';
-import { Slide} from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-function App() {
-  
-  useAuthCheck();
 
+
+import 'react-toastify/dist/ReactToastify.css';
+import { CustomToastContainer } from './components/UI/CustomToastContainer/CustomToastContainer';
+function App() {
+  useAuthCheck();
   return (
     <AppLayout>
-      <Navbar />
       <AppRouter />
-      <Footer />
+      <CustomToastContainer />
       <GlobalStyles />
-      <ToastContainer
-        position='bottom-right'
-        autoClose={1000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme='dark'
-        transition={Slide}
-        limit={3}
-      />
     </AppLayout>
   );
 }

@@ -10,14 +10,12 @@ export const GlobalStyles = createGlobalStyle`
   --black:#101010ff;
   --soft-black:#252525;
   --grey:#333533ff;
-  
 } 
 
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* font-family: 'Poppins', sans-serif; */
   text-decoration: none;
   list-style: none;
 }
@@ -34,5 +32,9 @@ body{
 *:visited{
   text-decoration: none;
   color: inherit;
+}
+
+*:disabled{
+  opacity: .3;
 }
 `;

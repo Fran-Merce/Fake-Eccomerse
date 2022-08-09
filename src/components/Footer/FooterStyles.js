@@ -4,9 +4,9 @@ import { mediaQueries } from '../../styles/mediaQueries';
 export const FooterStyled = styled.div`
   width: 100%;
   border-top: 1px solid #e6e6e6;
-  /* margin-top: 1rem; */
+  margin-top: 1rem;
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 2rem;

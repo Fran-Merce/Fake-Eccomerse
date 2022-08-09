@@ -10,7 +10,7 @@ const ProductsPage = () => {
     <ProductsPageStyled>
       <AnimatePresence>{open && <Sidebar setOpen={setOpen} />}</AnimatePresence>
       <div
-        style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}
+        style={{ display: 'flex', alignItems: 'center', flexDirection: 'column',width: '90%' }}
       >
         <PrimaryButton onClick={() => setOpen(!open)}> Aplicar Filtros </PrimaryButton>
         <ProductList />

@@ -16,9 +16,10 @@ export const ProductGalleryWrapper = styled.div`
 export const PrimaryImageWrapper = styled.div`
   width: 320px;
   min-height: 30vh;
-
+  max-width: 400px;
   @media (${mediaQueries.mobile}) {
     width: 400px;
+    max-width: 400px;
     margin-bottom: 20px;
   }
 `;
