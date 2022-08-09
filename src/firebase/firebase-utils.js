@@ -52,9 +52,12 @@ export const singInWithGoogle = () => signInWithPopup(auth, provider);
 export const createUser = async ({ email, password, displayName }) => {
   const res = await createUserWithEmailAndPassword(auth, email, password);
   await sendEmailVerification(res.user, actionCodeSettingVerification);
+  console.log(await sendEmailVerification(res.user, actionCodeSettingVerification));
   await updateProfile(res.user, { displayName });
   console.log(await updateProfile(res.user, { displayName }));
-  Swal.fire('Email', `Mensaje de verificación enviado al mail ${email} `, 'success');
+  Swal.fire(swalModalAuth('Email', `Mensaje de verificación enviado al mail ${email} `, 'success'));
+ 
+  
 };
 
 export const singInUser = ({ email, password }) =>

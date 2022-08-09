@@ -14,6 +14,7 @@ export const handleSubmitFormRegister = async (values, actions) => {
       Swal.fire(swalModalAuth('Error', 'La Contraseña es deamsiado debil', 'error'));
     else
       Swal.fire(swalModalAuth('Error', 'Upps ocurrio un error en el registro', 'error'));
+      console.log(error)
   }
   actions.resetForm();
 };
