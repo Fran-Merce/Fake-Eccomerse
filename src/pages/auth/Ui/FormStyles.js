@@ -35,16 +35,19 @@ export const FormStyled = styled.form`
   flex-direction: column;
   backdrop-filter: blur(5px);
   gap: 3rem;
-  padding: 2rem;
+padding: 5px;
   background-color: rgba(0, 0, 0, 0.7);
   font-family: 'Signika', sans-serif;
-
+  text-align: center;
   h1 {
     font-size: 2.5rem;
     font-family: monospace;
     letter-spacing: 3px;
+    text-align: center;
   }
-
+  @media (${mediaQueries.mobile}) {
+    padding: 2rem;
+  }
   @media (${mediaQueries.desktop}) {
     max-height: 600px;
     min-height: 600px;
@@ -92,13 +95,13 @@ export const InputStyled = styled.input`
   width: 100%;
   padding: 0.4rem 0.5rem;
   border-radius: 5px;
-  border: 1px solid ${props => props.errors ? 'red' : '#fff'};
+  border: 1px solid ${props => (props.errors ? 'red' : '#fff')};
   background-color: transparent;
   color: #fff;
   font-size: 0.8rem;
   font-family: 'Poppins', sans-serif;
   &:focus {
     outline: none;
-    border: 1px solid ${props => props.errors ? 'red' : '#000'};
+    border: 1px solid ${props => (props.errors ? 'red' : '#000')};
   }
 `;
