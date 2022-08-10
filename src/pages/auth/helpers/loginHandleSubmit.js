@@ -6,13 +6,10 @@ import {
 import { swalModalAuth } from '../../../helpers/swal/swal';
 
 export const handleSubmitFormLogin = async values => {
-  console.log('submit')
   try {
     const { user } = await singInUser({ ...values });
     createUserProfileDocument(user);
-    console.log('submit try')
   } catch (error) {
-    console.log(error);
     if (error.code === 'auth/user-not-found') {
       Swal.fire(swalModalAuth('Error', 'Usuario no encontrado', 'error'));
     } else if (error.code === 'auth/wrong-password') {

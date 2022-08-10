@@ -10,7 +10,7 @@ function onAuthStateChange(cb, action) {
   onAuthStateChanged(auth, async userAuth => {
     if (userAuth) {
       const userRef = await createUserProfileDocument(userAuth);
-      if (!userRef) return cb(action(null));
+      if(!userRef) return;
       onSnapshot(userRef, snapShot =>
         cb(action({ id: snapShot.id, ...snapShot.data() }))
       );

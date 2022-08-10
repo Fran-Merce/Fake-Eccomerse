@@ -11,5 +11,6 @@ export const AppLayoutWrapper = styled.div`
   width: 100%;
   margin: 0 auto;
   max-width: 1900px;
+  gap: 1rem;
   /* background-color: blue; */
 `;

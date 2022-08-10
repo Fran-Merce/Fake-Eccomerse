@@ -251,11 +251,11 @@ const productsData = [
   },
   {
     id: 9,
-    name: 'Product 9',
-    price: '200',
+    name: 'Polaris',
+    price: '8400',
     image: '/assets/imgs/products/keycap1-1.png',
-    brand: 'Logitech',
     category: 'keycaps',
+    warranty: '12 meses',
     images: [
       {
         url: '/assets/imgs/products/keycap1-1.png',
@@ -271,20 +271,19 @@ const productsData = [
       },
     ],
     details: {
-      switchModel: 'Switches cherry blue',
-      model: 'Modelo G502',
-      weight: 'Peso 0.5 kg',
-      size: 'Teclado 60%',
-      rgb: 'RGB: si',
-      keycaps: 'Keycaps: ksmw',
+      Material: 'material ABS',
+      profile: 'cherry profile',
+      productionMethod: 'Doble inyección',
+      totalKeys: '171 keycaps',
+      friendlyReminds: 'solo incluye las keycaps, no el teclado',
     },
   },
   {
     id: 10,
-    name: 'Product 10',
-    price: '200',
+    name: 'Raid Tk20 ',
+    price: '4000',
     image: '/assets/imgs/products/keycap2-1.png',
-    brand: 'Logitech',
+    warranty: '16 meses',
     category: 'keycaps',
     images: [
       {
@@ -301,20 +300,19 @@ const productsData = [
       },
     ],
     details: {
-      switchModel: 'Switches cherry blue',
-      model: 'Modelo G502',
-      weight: 'Peso 0.5 kg',
-      size: 'Teclado 60%',
-      rgb: 'RGB: si',
-      keycaps: 'Keycaps: ksmw',
+      Material: 'material ABS',
+      profile: ' cherry profile',
+      productionMethod: 'Doble inyección',
+      totalKeys: '171 keycaps',
+      friendlyReminds: 'solo incluye las keycaps, no el teclado',
     },
   },
   {
     id: 11,
-    name: 'Product 11',
-    price: '200',
+    name: 'Orage Storm',
+    price: '4500',
     image: '/assets/imgs/products/keycap3-1.png',
-    brand: 'Logitech',
+    warranty: '12 meses',
     category: 'keycaps',
     images: [
       {
@@ -331,20 +329,20 @@ const productsData = [
       },
     ],
     details: {
-      switchModel: 'Switches cherry blue',
-      model: 'Modelo G502',
-      weight: 'Peso 0.5 kg',
-      size: 'Teclado 60%',
-      rgb: 'RGB: si',
-      keycaps: 'Keycaps: ksmw',
+      Material: 'material ABS',
+      profile: ' OEM profile',
+      productionMethod: 'sublimado',
+      totalKeys: '157 keycaps',
+      friendlyReminds: 'solo incluye las keycaps, no el teclado',
     },
   },
   {
     id: 12,
-    name: 'Product 12',
-    price: '200',
+    name: 'Samurai Dreams',
+    price: '5500',
     image: '/assets/imgs/products/keycap4-2.png',
     category: 'keycaps',
+    warranty: '6 meses',
     images: [
       {
         url: '/assets/imgs/products/keycap4-1.png',
@@ -360,19 +358,19 @@ const productsData = [
       },
     ],
     details: {
-      switchModel: 'Switches cherry blue',
-      model: 'Modelo G502',
-      weight: 'Peso 0.5 kg',
-      size: 'Teclado 60%',
-      rgb: 'RGB: si',
-      keycaps: 'Keycaps: ksmw',
+      Material: 'material ABS',
+      profile: 'cherry profile',
+      productionMethod: 'Doble inyección',
+      totalKeys: '171 keycaps',
+      friendlyReminds: 'solo incluye las keycaps, no el teclado',
     },
   },
   {
     id: 13,
-    name: 'Product 13',
-    price: '200',
+    name: 'Alter',
+    price: '10000',
     category: 'keycaps',
+    warranty: '12 meses',
     image: '/assets/imgs/products/keycap5-1.png',
     images: [
       {
@@ -389,18 +387,18 @@ const productsData = [
       },
     ],
     details: {
-      switchModel: 'Switches cherry blue',
-      model: 'Modelo G502',
-      weight: 'Peso 0.5 kg',
-      size: 'Teclado 60%',
-      rgb: 'RGB: si',
-      keycaps: 'Keycaps: ksmw',
+      Material: 'material PBT',
+      profile: 'cherry profile',
+      productionMethod: 'Doble inyección',
+      totalKeys: '129 keycaps',
+      friendlyReminds: 'solo incluye las keycaps, no el teclado',
     },
   },
   {
     id: 14,
-    name: 'Keycaps Violet',
-    price: '200',
+    name: 'EVA Mecha',
+    price: '9999',
+    warranty: '18 meses',
     category: 'keycaps',
     image: '/assets/imgs/products/keycap6-1.png',
     images: [
@@ -418,12 +416,10 @@ const productsData = [
       },
     ],
     details: {
-      switchModel: 'Switches cherry blue',
-      model: 'Modelo G502',
-      weight: 'Peso 0.5 kg',
-      size: 'Teclado 60%',
-      rgb: 'RGB: si',
-      keycaps: 'Keycaps: ksmw',
+      Material: 'material ABS',
+      profile: 'cherry profile',
+      totalKeys: '135 keycaps',
+      friendlyReminds: 'solo incluye las keycaps, no el teclado',
     },
   },
   {
@@ -431,7 +427,7 @@ const productsData = [
     name: 'GTMX Blue ',
     price: '8750',
     image: '/assets/imgs/products/switch1-1.png',
-
+    warranty: '12 meses',
     category: 'switches',
     images: [
       {
@@ -453,7 +449,7 @@ const productsData = [
       durability: 'Durabilidad: 85 millones pulsaciones',
       force: 'Fuerza Inicial: 42gf',
       compatible: 'compatible con: MX-Switches',
-      queantity: 'catidad: 128 switches',
+      quantity: 'catidad: 128 switches',
     },
   },
   {
@@ -461,7 +457,7 @@ const productsData = [
     name: 'Huano pink',
     price: '7500',
     image: '/assets/imgs/products/switch2-1.png',
-
+    warranty: '12 meses',
     category: 'switches',
     images: [
       {
@@ -483,7 +479,7 @@ const productsData = [
       durability: 'Durabilidad: 80 millones pulsaciones',
       force: 'Fuerza Inicial: 45gf',
       compatible: 'compatible con: MX-Switches',
-      queantity: 'Cantidad: 128 switches',
+      quantity: 'Cantidad: 128 switches',
     },
   },
 ];
