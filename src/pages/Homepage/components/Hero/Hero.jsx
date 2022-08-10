@@ -10,7 +10,7 @@ export const Hero = () => {
   return (
     <HeroWrapperStyled>
       <HeroContentStyled>
-        <h1>Custom Keybord is Art</h1>
+        <h1>Custom Fans</h1>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor
           sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet
