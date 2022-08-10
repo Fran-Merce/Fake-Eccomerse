@@ -28,7 +28,7 @@ export const FormContentWrapper = styled.div`
 export const FormStyled = styled.form`
   color: #fff;
   width: 450px;
-  min-height: 70%;
+  min-height: 80%;
   display: flex;
   align-items: center;
   justify-content: center;
