@@ -2,8 +2,7 @@ import React from 'react';
 import { CategorieCard } from './CategoriesStyles';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { TYPES } from '../../../../redux/TYPES';
-import { clearSearchAction, setCategoryAction, setSearchAction } from '../../../../redux/filter/filterActions';
+import { clearSearchAction, setCategoryAction } from '../../../../redux/filter/filterActions';
 export const Categorie = ({ name, image, id }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
