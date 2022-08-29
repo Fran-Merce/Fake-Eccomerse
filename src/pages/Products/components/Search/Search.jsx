@@ -15,7 +15,6 @@ export const Search = () => {
 
   const debouncedSearch = useRef(
     debounce(value => {
-      // const valueFormatted=value.trim().toLoweCase();
       value.length === 0
         ? dispatch(clearSearchAction())
         : dispatch(setSearchAction(value));

@@ -4,6 +4,7 @@ import { categoriesData } from '../../../../../data/categories';
 import {
   removeCategoryAction,
   setCategoryAction,
+  setSearchAction,
 } from '../../../../../redux/filter/filterActions';
 import {
   DropDownOptionStyled,
@@ -11,7 +12,7 @@ import {
 } from '../DropDown/DropDownStyled';
 
 export const DropDownOptions = () => {
-  const { categorySelected } = useSelector(state => state.filter);
+  const { categorySelected,search } = useSelector(state => state.filter);
   const dispatch = useDispatch();
   const [selected, setSelected] = useState(
     categorySelected ? categorySelected : null
@@ -20,10 +21,12 @@ export const DropDownOptions = () => {
   const handleSelect = option => {
     if (option === selected) {
       dispatch(removeCategoryAction());
+      dispatch(setSearchAction(search));
       return setSelected(null);
     }
     setSelected(option);
     dispatch(setCategoryAction(option));
+    dispatch(setSearchAction(search));
   };
   return (
     <DropDownOptionsWrapper>
