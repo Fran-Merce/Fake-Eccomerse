@@ -1,5 +1,4 @@
 import { categoriesData } from '../../../../data/categories';
-
 import React from 'react';
 import { Categorie } from './Categorie';
 import { CategoriesWrapper } from './CategoriesStyles';

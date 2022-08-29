@@ -5,8 +5,6 @@ export const setCategoryAction = category => ({
   payload: category,
 });
 
-
-
 export const removeCategoryAction = () => ({
   type: TYPES.REMOVE_CATEGORY
 })

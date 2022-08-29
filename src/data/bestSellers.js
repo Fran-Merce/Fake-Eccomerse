@@ -1,11 +1,11 @@
 export const bestSellersProducts = [
   {
     id: 4,
-    name: 'Product 4',
-    price: '400',
+    name: 'white Blade',
+    price: '12000',
     image: '/assets/imgs/products/custom4-1.png',
-    brand: 'Razer',
     category: 'teclados custom',
+    warranty: '12 meses',
     images: [
       {
         url: '/assets/imgs/products/custom4-1.png',
@@ -21,9 +21,9 @@ export const bestSellersProducts = [
       },
     ],
     details: {
-      switchType: 'Switches Black',
-      model: 'Modelo Darkhero K20',
-      weight: 'Peso 0.624 kg',
+      switchModel: 'Switches Black Tofu',
+      switchType: 'Linear',
+      model: 'Modelo Whitehero P80',
       size: 'Teclado 65%',
       rgb: 'RGB: no',
       keycaps: 'Keycaps Hero Old',
@@ -31,10 +31,10 @@ export const bestSellersProducts = [
   },
   {
     id: 8,
-    name: 'Product 8',
-    price: '200',
+    name: 'Orage Storm',
+    price: '14000',
     image: '/assets/imgs/products/custom8-1.png',
-    brand: 'Logitech',
+    warranty: '24 meses',
     category: 'teclados custom',
     images: [
       {
@@ -51,21 +51,22 @@ export const bestSellersProducts = [
       },
     ],
     details: {
-      switchType: 'Switches cherry blue',
-      model: 'Modelo G502',
-      weight: 'Peso 0.5 kg',
+      switchModel: 'Switches Black Bear',
+      model: 'Modelo RX-Storm',
+      switchType: 'Tactile',
+      swap: 'Hot Swap',
       size: 'Teclado 60%',
-      rgb: 'RGB: si',
-      keycaps: 'Keycaps: ksmw',
+      rgb: 'RGB: no',
+      keycaps: 'Keycaps: Orange Storm v2',
     },
   },
   {
     id: 9,
-    name: 'Product 9',
-    price: '200',
+    name: 'Polaris',
+    price: '8400',
     image: '/assets/imgs/products/keycap1-1.png',
-    brand: 'Logitech',
     category: 'keycaps',
+    warranty: '12 meses',
     images: [
       {
         url: '/assets/imgs/products/keycap1-1.png',
@@ -81,12 +82,11 @@ export const bestSellersProducts = [
       },
     ],
     details: {
-      switchType: 'Switches cherry blue',
-      model: 'Modelo G502',
-      weight: 'Peso 0.5 kg',
-      size: 'Teclado 60%',
-      rgb: 'RGB: si',
-      keycaps: 'Keycaps: ksmw',
+      Material: 'material ABS',
+      profile: 'cherry profile',
+      productionMethod: 'Doble inyección',
+      totalKeys: '171 keycaps',
+      friendlyReminds: 'solo incluye las keycaps, no el teclado',
     },
   },
 ];

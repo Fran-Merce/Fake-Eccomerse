@@ -3,12 +3,14 @@ import { CategorieCard } from './CategoriesStyles';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { TYPES } from '../../../../redux/TYPES';
+import { setCategoryAction, setSearchAction } from '../../../../redux/filter/filterActions';
 export const Categorie = ({ name, image, id }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleRedirect = () => {
-    dispatch({ type: TYPES.SET_CATEGORY, payload: name });
+    dispatch(setCategoryAction(name));
+    dispatch(setSearchAction(''));
     navigate('/products');
   };
 

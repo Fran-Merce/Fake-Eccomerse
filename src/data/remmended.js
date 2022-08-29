@@ -1,10 +1,10 @@
 export const reccomendedProducts = [
   {
     id: 11,
-    name: 'Product 11',
-    price: '200',
+    name: 'Orage Storm',
+    price: '4500',
     image: '/assets/imgs/products/keycap3-1.png',
-    brand: 'Logitech',
+    warranty: '12 meses',
     category: 'keycaps',
     images: [
       {
@@ -21,20 +21,19 @@ export const reccomendedProducts = [
       },
     ],
     details: {
-      switchType: 'Switches cherry blue',
-      model: 'Modelo G502',
-      weight: 'Peso 0.5 kg',
-      size: 'Teclado 60%',
-      rgb: 'RGB: si',
-      keycaps: 'Keycaps: ksmw',
+      Material: 'material ABS',
+      profile: ' OEM profile',
+      productionMethod: 'sublimado',
+      totalKeys: '157 keycaps',
+      friendlyReminds: 'solo incluye las keycaps, no el teclado',
     },
   },
   {
     id: 7,
-    name: 'Product 7',
-    price: '200',
+    name: 'Olds Days',
+    price: '7200',
     image: '/assets/imgs/products/custom7-1.png',
-
+    warranty: '12 meses',
     category: 'teclados custom',
     images: [
       {
@@ -51,20 +50,21 @@ export const reccomendedProducts = [
       },
     ],
     details: {
-      switchType: 'Switches cherry blue',
-      model: 'Modelo G502',
-      weight: 'Peso 0.5 kg',
-      size: 'Teclado 60%',
-      rgb: 'RGB: si',
-      keycaps: 'Keycaps: ksmw',
+      switchType: 'Tactile',
+      switchModel: 'Switches Black Tofu',
+      model: 'Modelo Olds Days Extreme',
+      size: 'Teclado 65%',
+      swap: 'Hot Swap',
+      rgb: 'RGB no',
+      keycaps: 'Keycaps Old Days variant one',
     },
   },
   {
     id: 5,
-    name: 'Product 5',
-    price: '200',
+    name: 'Rainbow',
+    price: '10500',
     image: '/assets/imgs/products/custom5-1.png',
- 
+    warranty: '12 meses',
     category: 'teclados custom',
     images: [
       {
@@ -81,12 +81,13 @@ export const reccomendedProducts = [
       },
     ],
     details: {
-      switchType: 'Cherry Red',
-      model: 'Modelo G502',
-      weight: 'Peso 0.5 kg',
+      switchModel: 'Switches Tofu Red',
+      swap: 'Hot Swap',
+      switchType: 'Linear',
+      model: 'Modelo Rainbow K20',
       size: 'Teclado 60%',
-      rgb: 'RGB: si',
-      keycaps: 'Keycaps: Rainbow',
+      rgb: 'RGB si',
+      keycaps: 'Keycaps Rainbow Tsx',
     },
   },
 ];
