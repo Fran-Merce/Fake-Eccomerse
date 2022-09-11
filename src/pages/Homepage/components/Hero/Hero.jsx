@@ -1,6 +1,5 @@
 import {
   ArrowButtonStyled,
-  HeroButtonStyled,
   HeroContentStyled,
   HeroWrapperStyled,
 } from './HeroStyled';
@@ -12,11 +11,10 @@ export const Hero = () => {
       <HeroContentStyled>
         <h1>Custom Fans</h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor
-          sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet
-          consectetur adipisicing elit.
+          En custom Fans Tenermos una amplia variedad de teclados, switches, keycaps y
+          mucho mas. Tamiben tenemos los mejores precios del mercado.
+          <span > ! Hecho por Fans pora Fans !</span>
         </p>
-  
       </HeroContentStyled>
       <ArrowButtonStyled initial='hidden' animate='show' variants={arrowVariants}>
         <AiOutlineArrowDown fontSize={'2.3rem'} />

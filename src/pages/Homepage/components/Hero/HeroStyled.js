@@ -34,6 +34,12 @@ export const HeroContentStyled = styled.div`
     color: var(--primary-text);
     font-family: 'Signika', sans-serif;
     font-weight: 500;
+    span{
+      color: var(--secondary-text);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      font-size: 1rem;
+    }
   }
 
   @media (${mediaQueries.tablet}) {
